@@ -87,11 +87,11 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   const coordsOpacity = useTransform(smoothProgress, [0, 0.35, 0.55, 0.85], [0, 0.3, 0.3, 0]);
 
   return (
-    // Parent scroll track: 180vh long to give space for scroll-linked animations
-    <div ref={containerRef} className="relative h-[180vh] bg-primary-bg">
+    // Parent scroll track: 105vh on mobile, 180vh on desktop
+    <div ref={containerRef} className="relative h-[105vh] md:h-[180vh] bg-primary-bg">
 
-      {/* Sticky container: stays locked in view with layout optimized to fit all heights */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-end pt-20 pb-6 md:pb-10">
+      {/* Sticky container: 65vh on mobile, h-screen on desktop */}
+      <div className="sticky top-0 h-[65vh] md:h-screen w-full overflow-hidden flex flex-col justify-end pt-20 pb-6 md:pb-10">
 
         {/* Background Video Wrapper - animated on scroll */}
         <motion.div
