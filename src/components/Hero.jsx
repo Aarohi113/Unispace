@@ -99,7 +99,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             y: videoY,
             borderRadius: videoBorderRadius
           }}
-          className="absolute inset-0 z-0 overflow-hidden origin-center bg-primary-dark"
+          className="absolute top-[25vh] md:top-0 h-[50vh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
           {/* Video 1 (First Pinterest stream: https://pin.it/3NiBjgVmd) */}
           <video
@@ -135,7 +135,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
             onEnded={handleEnded3}
           />
-
+ 
           {/* Blueprint gridlines inside video container */}
           <div className="absolute inset-0 z-10 pointer-events-none opacity-5 flex justify-between px-10 md:px-24">
             <div className="w-[1px] h-full bg-white" />
@@ -143,13 +143,13 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             <div className="w-[1px] h-full bg-white" />
           </div>
         </motion.div>
-
+ 
         {/* Hero Content Overlay (fades out and slides up on scroll) */}
         <motion.div
           style={{ opacity: textOpacity, y: textY }}
-          className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full mb-5 md:mb-6"
+          className="absolute inset-0 md:relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center md:block mb-5 md:mb-6 pointer-events-none"
         >
-          <div className="max-w-3xl text-left">
+          <div className="max-w-3xl text-left pointer-events-auto">
             {/* Tag */}
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 border-l-2 border-luxury-highlight bg-black/20 backdrop-blur-sm mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />

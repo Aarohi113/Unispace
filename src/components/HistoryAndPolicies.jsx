@@ -90,7 +90,7 @@ const HistoryAndPolicies = () => {
     <div ref={containerRef} className="relative h-[400vh] bg-primary-bg">
       
       {/* Sticky viewport content container */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 px-6">
+      <div className="sticky top-[60px] md:top-0 h-[calc(100vh-60px)] md:h-screen w-full overflow-hidden flex flex-col justify-center items-center py-6 md:py-12 px-6">
         
         {/* Section Header */}
         <div className="text-center mb-8 max-w-2xl z-10">

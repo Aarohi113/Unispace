@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const InteractiveProjects = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
   // Motion values to track normalize coordinate offsets
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -13,7 +22,7 @@ const InteractiveProjects = () => {
 
   const handleMouseMove = (e) => {
     // Disable on mobile/touch viewports
-    if (window.innerWidth < 1024) return;
+    if (!isDesktop) return;
     
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
@@ -53,12 +62,12 @@ const InteractiveProjects = () => {
         <div className="projects-hover-orbit-container">
           <motion.div 
             className="projects-pentagon-orbit group/orbit"
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            style={isDesktop ? { rotateX, rotateY, transformStyle: "preserve-3d" } : {}}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            {/* Concentric Architectural Spin Rings (slow ambient rotations) */}
-            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-20 group-hover/orbit:opacity-40 transition-opacity duration-700 select-none">
+            {/* Concentric Architectural Spin Rings (slow ambient rotations) - hidden on mobile to prevent overflow */}
+            <div className="absolute inset-0 z-0 hidden lg:flex items-center justify-center pointer-events-none opacity-20 group-hover/orbit:opacity-40 transition-opacity duration-700 select-none">
               <div className="w-[520px] h-[520px] rounded-full border border-dashed border-luxury-highlight/35 animate-spin-slow-forward" />
               <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-luxury-highlight/20 animate-spin-slow-reverse" />
               <div className="absolute w-[680px] h-[680px] rounded-full border border-luxury-highlight/10 animate-spin-slow-super-forward" />

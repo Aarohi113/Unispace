@@ -310,12 +310,10 @@ body {
   }
 
   .projects-pentagon-orbit {
-    display: flex !important;
-    flex-direction: column !important;
+    display: block !important;
     width: 100% !important;
     height: auto !important;
     padding: 0 !important;
-    gap: 60px !important; 
     perspective: none !important;
     transform: none !important;
     overflow: visible !important;
@@ -329,13 +327,12 @@ body {
     width: 100% !important;
     height: 380px !important;
     opacity: 1 !important;
-    transform: none !important;
     display: block !important;
     box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.08), 0 15px 35px rgba(11, 31, 58, 0.1);
     border-radius: 20px;
     pointer-events: auto !important;
     z-index: var(--card-index) !important; 
-    margin-bottom: 0 !important;
+    margin-bottom: 60px !important; /* Space between cards */
   }
 
   .project-card:nth-child(1) { transform: scale(0.92); }
