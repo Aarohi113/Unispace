@@ -35,8 +35,8 @@ const Navbar = ({ onOpenConsultation }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? 'bg-primary-bg/95 border-b border-black/5 shadow-lg py-4'
-          : 'bg-black/10 backdrop-blur-md border-b border-white/10 py-5'
+          ? 'bg-primary-bg/95 border-b border-black/5 shadow-lg py-2.5 sm:py-4'
+          : 'bg-black/10 backdrop-blur-md border-b border-white/10 py-3 sm:py-5'
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -45,7 +45,7 @@ const Navbar = ({ onOpenConsultation }) => {
             <img
               src={unispaceLogo}
               alt="Unispace Contracts Logo"
-              className="h-20 md:h-16 w-auto object-contain"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
             />
           </a>
 
