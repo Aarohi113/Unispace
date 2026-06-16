@@ -2,7 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import Button from './Button';
-import unispaceVideo from '../assets/unispace-video.mp4';
+import video1 from '../assets/video-1.mp4';
+import video2 from '../assets/video-2.mp4';
+import video3 from '../assets/video-3.mp4';
 
 const Hero = ({ onExploreProjects, onContactUs }) => {
   const containerRef = useRef(null);
@@ -101,36 +103,36 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
           }}
           className="absolute top-[25vh] md:top-0 h-[50vh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
-          {/* Video 1 (First Pinterest stream: https://pin.it/3NiBjgVmd) */}
+          {/* Video 1 (video-1.mp4 local asset) */}
           <video
             ref={videoRef1}
             autoPlay
             muted
             preload="auto"
             playsInline
-            src="https://v1-c.pinimg.com/videos/mc/720p/01/55/9c/01559caf0c1e79b9123e84c2ce06dffa.mp4"
+            src={video1}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 1 ? 1 : 0, zIndex: activeVideo === 1 ? 1 : 0 }}
             onEnded={handleEnded1}
           />
-          {/* Video 2 (Unispace Local Video - middle of loop) */}
+          {/* Video 2 (video-2.mp4 local asset) */}
           <video
             ref={videoRef2}
             muted
             preload="auto"
             playsInline
-            src={unispaceVideo}
+            src={video2}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
             onEnded={handleEnded2}
           />
-          {/* Video 3 (Second Pinterest stream: https://pin.it/1gumxxMvd) */}
+          {/* Video 3 (video-3.mp4 local asset) */}
           <video
             ref={videoRef3}
             muted
             preload="auto"
             playsInline
-            src="https://v1.pinimg.com/videos/mc/720p/a9/40/1d/a9401d701a232f2133289f347adb39b2.mp4"
+            src={video3}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
             onEnded={handleEnded3}
