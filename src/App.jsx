@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, MapPin, Phone, Mail, ArrowUpRight, CheckCircle2, ChevronRight, Award, Briefcase, Users } from 'lucide-react';
 import Navbar from './components/Navbar';
@@ -12,8 +12,22 @@ import StatsCard from './components/StatsCard';
 import CallToAction from './components/CallToAction';
 import HistoryAndPolicies from './components/HistoryAndPolicies';
 import unispaceLogo from './assets/unispacelogo.png';
+import Preloader from './components/Preloader';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isLoading]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -92,7 +106,14 @@ function App() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-primary-bg selection:bg-luxury-highlight selection:text-primary-dark">
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && (
+          <Preloader onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      <div className="relative min-h-screen bg-primary-bg selection:bg-luxury-highlight selection:text-primary-dark">
       
       {/* Floating Navbar */}
       <Navbar onOpenConsultation={() => setIsModalOpen(true)} />
@@ -477,7 +498,8 @@ function App() {
         </svg>
       </a>
 
-    </div>
+      </div>
+    </>
   );
 }
 
