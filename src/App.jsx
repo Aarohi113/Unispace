@@ -166,7 +166,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12">
           
           {/* Column 1: Brand & Bio */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5">
             <div className="flex items-center gap-3">
               <img 
                 src={unispaceLogo} 
@@ -178,7 +178,7 @@ function App() {
               Designing and building commercial workspaces that inspire performance, foster community, and express organizational excellence.
             </p>
             {/* Colored Social Icons Row */}
-            <div className="flex items-center gap-3.5 mt-2">
+            <div className="flex items-center justify-center md:justify-start gap-3.5 mt-2">
               {/* Instagram */}
               <a 
                 href="https://www.instagram.com/unispace_contracts?igsh=cTl1eGJvdzVxYno1" 
@@ -245,11 +245,11 @@ function App() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
             <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
               Quick Links
             </h4>
-            <div className="flex flex-col gap-2.5 text-xs font-sans">
+            <div className="flex flex-col items-center md:items-start gap-2.5 text-xs font-sans">
               <a href="#home" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Home Workspace</a>
               <a href="#projects" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Case Studies</a>
               <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Design & Contracting</a>
@@ -258,22 +258,22 @@ function App() {
           </div>
 
           {/* Column 3: Contact Details */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
             <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
               Office HQ
             </h4>
-            <div className="flex flex-col gap-3.5 text-xs font-sans">
-              <div className="flex items-start gap-2.5">
+            <div className="flex flex-col items-center md:items-start gap-3.5 text-xs font-sans">
+              <div className="flex flex-col items-center md:flex-row md:items-start text-center md:text-left gap-2.5">
                 <MapPin className="w-4 h-4 text-luxury-highlight shrink-0 mt-0.5" />
                 <span className="text-text-charcoal/70">Office No-305, B-79, Sector -63, NOIDA</span>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left gap-2.5">
                 <Phone className="w-4 h-4 text-luxury-highlight shrink-0" />
                 <a href="tel:+918882928434" className="text-text-charcoal/70 hover:text-luxury-highlight transition-colors">
                   +91 8882928434
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left gap-2.5">
                 <Mail className="w-4 h-4 text-luxury-highlight shrink-0" />
                 <a href="mailto:info@unispacecontracts.in" className="text-text-charcoal/70 hover:text-luxury-highlight transition-colors">
                   info@unispacecontracts.in
@@ -283,7 +283,7 @@ function App() {
           </div>
 
           {/* Column 4: Newsletter / Connect */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
             <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
               Inquiries
             </h4>

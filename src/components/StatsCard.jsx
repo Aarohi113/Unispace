@@ -17,7 +17,7 @@ const StatsCard = ({ stat, label, icon: Icon, delay = 0 }) => {
         backgroundColor: 'rgba(255, 255, 255, 0.12)',
         boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.3)'
       }}
-      className="relative flex items-center gap-5 p-4 md:p-5 lg:p-6 rounded-2xl bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_12px_40px_0_rgba(0,0,0,0.3)] overflow-hidden group transition-all duration-500"
+      className="relative flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-4 sm:gap-5 p-4 md:p-5 lg:p-6 rounded-2xl bg-black/50 backdrop-blur-md border border-white/10 shadow-[0_12px_40px_0_rgba(0,0,0,0.3)] overflow-hidden group transition-all duration-500"
     >
       {/* Decorative Champagne Gold ambient hover glow */}
       <div className="absolute -right-10 -bottom-10 w-24 h-24 rounded-full bg-luxury-highlight/10 blur-2xl group-hover:bg-luxury-highlight/35 transition-all duration-700" />

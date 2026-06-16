@@ -118,11 +118,11 @@ const HistoryAndPolicies = () => {
                 {/* Left Side: Information Content */}
                 <div className="col-span-1 md:col-span-7 p-6 md:p-10 lg:p-12 flex flex-col justify-center overflow-y-auto">
                   {item.type === "History" ? (
-                    <div className="flex flex-col gap-4 text-left">
+                    <div className="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
                       <span className="text-[10px] tracking-[0.25em] text-luxury-highlight font-bold uppercase font-sans">
                         {item.subtitle}
                       </span>
-                      <h3 className="font-display text-lg sm:text-2xl md:text-3xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words">
+                      <h3 className="font-display text-lg sm:text-2xl md:text-3xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words w-full">
                         {item.title}
                       </h3>
                       <div className="flex flex-col gap-3 font-sans text-xs text-white/80 leading-relaxed font-light">
@@ -132,8 +132,8 @@ const HistoryAndPolicies = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-4 text-left">
-                      <div className="flex items-center gap-3">
+                    <div className="flex flex-col gap-4 text-center md:text-left items-center md:items-start">
+                      <div className="flex items-center justify-center md:justify-start gap-3">
                         <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-luxury-highlight/15 border border-luxury-highlight/20 text-xs font-bold text-luxury-highlight font-sans">
                           {item.num}
                         </span>
@@ -141,7 +141,7 @@ const HistoryAndPolicies = () => {
                           Corporate Governance
                         </span>
                       </div>
-                      <h3 className="font-display text-base sm:text-lg md:text-2xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words">
+                      <h3 className="font-display text-base sm:text-lg md:text-2xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words w-full">
                         {item.title}
                       </h3>
                       <p className="font-sans text-xs md:text-sm text-white/85 leading-relaxed font-light">

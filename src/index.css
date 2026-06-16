@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Outfit:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,8 +9,8 @@
   --color-text-charcoal: #252525;
   --color-secondary-accent: #2E8B8B;
   
-  --font-display: "Cinzel", serif;
-  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Outfit", sans-serif;
 }
 
 /* Custom styling resets & adjustments */
@@ -21,7 +21,7 @@ html, body, #root {
   min-height: 100%;
   background-color: #F8F7F3;
   color: #252525;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
   scroll-behavior: smooth;
 }
 

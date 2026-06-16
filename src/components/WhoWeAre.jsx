@@ -82,7 +82,7 @@ const WhoWeAre = () => {
             whileInView={isMobile ? { x: 0, opacity: 1 } : false}
             viewport={isMobile ? { once: true, margin: "-100px" } : undefined}
             transition={isMobile ? { duration: 0.8, ease: "easeOut" } : undefined}
-            className="flex flex-col items-start text-left"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <span className="text-[10px] md:text-xs font-semibold tracking-[0.3em] text-brand-accent uppercase block mb-4">
               Who We Are

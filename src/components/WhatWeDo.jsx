@@ -145,7 +145,7 @@ const WhatWeDo = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Side: Description Text Content */}
-          <div className="lg:col-span-5 flex flex-col items-start text-left pr-4">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left pr-0 lg:pr-4">
             <span className="text-xs font-semibold tracking-[0.2em] text-brand-accent uppercase block mb-3 font-sans">
               WHAT WE DO
             </span>

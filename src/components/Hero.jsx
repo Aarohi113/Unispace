@@ -78,11 +78,10 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   const videoBorderRadius = useTransform(smoothProgress, [0.55, 0.9], ["0px", "28px"]);
 
   // Map smooth progress to text overlays:
-  // - Starts completely invisible at scroll 0 (opacity 0, y: 80)
-  // - Slides up & fades in (opacity 1, y: 0) by 0.35 progress
-  // - Fades out & slides up (opacity 0, y: -80) during transition exit (0.55 to 0.85)
-  const textOpacity = useTransform(smoothProgress, [0, 0.35, 0.55, 0.85], [0, 1, 1, 0]);
-  const textY = useTransform(smoothProgress, [0, 0.35, 0.55, 0.85], [80, 0, 0, -80]);
+  // - Starts completely visible at scroll 0 (opacity 1, y: 0)
+  // - Slides up & fades out smoothly as scroll progresses
+  const textOpacity = useTransform(smoothProgress, [0, 0.4, 0.75], [1, 1, 0]);
+  const textY = useTransform(smoothProgress, [0, 0.4, 0.75], [0, -45, -100]);
 
   // Coordinates overlay fades in and out with scroll
   const coordsOpacity = useTransform(smoothProgress, [0, 0.35, 0.55, 0.85], [0, 0.3, 0.3, 0]);
@@ -101,7 +100,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             y: videoY,
             borderRadius: videoBorderRadius
           }}
-          className="absolute top-[25vh] md:top-0 h-[50vh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
+          className="absolute top-0 md:top-0 h-[65vh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
           {/* Video 1 (video-1.mp4 local asset) */}
           <video
@@ -149,7 +148,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
         {/* Hero Content Overlay (fades out and slides up on scroll) */}
         <motion.div
           style={{ opacity: textOpacity, y: textY }}
-          className="absolute inset-0 md:relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center md:block mb-5 md:mb-6 pointer-events-none"
+          className="absolute top-[80px] left-0 right-0 h-[calc(65vh-80px)] md:relative md:h-auto md:top-auto md:left-auto md:right-auto z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center md:block mb-5 md:mb-6 pointer-events-none"
         >
           <div className="max-w-3xl text-left pointer-events-auto">
             {/* Tag */}
@@ -161,7 +160,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             </div>
 
             {/* Heading */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-wide leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-wide leading-[1.3] md:leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
               Transforming <br className="hidden md:inline" />
               Workspaces Into <br />
               <span className="font-semibold text-luxury-highlight relative inline-block group">
@@ -171,7 +170,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             </h1>
 
             {/* Description */}
-            <p className="font-sans text-xs sm:text-sm md:text-base text-white/95 leading-relaxed font-light mb-6 max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            <p className="font-sans text-xs sm:text-sm md:text-base text-white/95 leading-relaxed font-normal mb-6 max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Creating premium work environments with innovative design, precision execution and world-class craftsmanship.
             </p>
 
