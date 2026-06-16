@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #F8F7F3;
+  --color-primary-dark: #0B1F3A;
+  --color-brand-accent: #C62828;
+  --color-luxury-highlight: #C8A96A;
+  --color-text-charcoal: #252525;
+  --color-secondary-accent: #2E8B8B;
+  
+  --font-display: "Cinzel", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom styling resets & adjustments */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #F8F7F3;
+  color: #252525;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Luxury visual accents */
+.luxury-gradient-text {
+  background: linear-gradient(135deg, #C8A96A 0%, #E8D5B5 50%, #C8A96A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-underline {
+  position: relative;
+}
+.luxury-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: -4px;
+  left: 0;
+  background-color: #C8A96A;
+  transition: width 0.3s ease;
+}
+.luxury-underline:hover::after {
+  width: 100%;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F7F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A96A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8D5B5;
+}
+
+/* Infinite Marquee Animation (15s loop) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* --- Interactive Projects 3D Hover & Stacking System --- */
+.unispace-projects-hover-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F8F7F3; /* Warm Off-White */
+  padding: 40px 0;
+  overflow-x: clip; /* Prevent horizontal scrollbars while letting 3D cards overflow */
+}
+
+.projects-viewport-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+  padding: 0 24px;
+}
+
+@media (min-width: 1024px) {
+  .projects-hover-orbit-container {
+    position: relative;
+    width: 100%;
+    max-width: 1360px; /* Wider container to avoid edge cutoff */
+    height: 680px; /* Taller height to hold larger master card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .projects-pentagon-orbit {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1400px;
+    overflow: visible;
+  }
+
+  .project-card {
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(11, 31, 58, 0.08);
+    background-color: #F8F7F3;
+    transition: transform 0.85s cubic-bezier(0.2, 1, 0.25, 1), opacity 0.6s ease, box-shadow 0.4s ease;
+  }
+
+  /* Center Master Card Sizing - Large (matching reference) */
+  .central-master-card {
+    width: 580px;
+    height: 380px;
+    left: calc(50% - 290px);
+    top: calc(50% - 190px);
+    z-index: 10; 
+    transform: translate3d(0, 0, 0) scale(1);
+    cursor: pointer;
+  }
+
+  /* Satellite Card Sizing - Slightly smaller */
+  .exploded-satellite-card {
+    width: 440px;  
+    height: 290px;
+    left: calc(50% - 220px);
+    top: calc(50% - 145px);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate3d(0, 0, -120px) scale(0.85);
+  }
+
+  /* Explode states - Master card shrinks, satellite cards move to corners */
+  .projects-pentagon-orbit:hover .central-master-card {
+    transform: translate3d(0, 0, 40px) scale(0.88); /* Shrinks as requested */
+    box-shadow: 0 30px 60px rgba(11, 31, 58, 0.2);
+  }
+
+  .projects-pentagon-orbit:hover .pos-top-left {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
+    transform: translate3d(-360px, -150px, -40px) scale(0.82) rotateY(12deg);
+  }
+
+  .projects-pentagon-orbit:hover .pos-top-right {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
+    transform: translate3d(360px, -150px, -40px) scale(0.82) rotateY(-12deg);
+  }
+
+  .projects-pentagon-orbit:hover .pos-bottom-left {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
+    transform: translate3d(-340px, 150px, -20px) scale(0.82) rotateY(10deg);
+  }
+
+  .projects-pentagon-orbit:hover .pos-bottom-right {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
+    transform: translate3d(340px, 150px, -20px) scale(0.82) rotateY(-10deg);
+  }
+
+  .projects-pentagon-orbit:hover .proj-card-desc {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+.proj-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(11, 31, 58, 0.9) 0%, rgba(11, 31, 58, 0) 70%);
+}
+
+.proj-card-details {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  color: #FFFFFF;
+  z-index: 5;
+  text-align: left;
+}
+
+/* Base large headings for luxury cards */
+.proj-card-details h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22pt;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+/* Master Card Heading - matching Puma India screenshot size */
+.central-master-card .proj-card-details h3 {
+  font-size: 28pt;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.proj-card-desc {
+  font-size: 9.5pt;
+  color: #E2E8F0;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 15px;
+  opacity: 0; 
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.view-details-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 10pt;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 4px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.view-details-link:hover {
+  color: #C8A96A; /* Accent color on hover */
+  border-color: #C8A96A;
+}
+
+/* --- MOBILE VIEW: FLUID STICKY OVERLAPPING CARDS SYSTEM --- */
+@media (max-width: 1023px) {
+  .unispace-projects-hover-section {
+    padding: 30px 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .projects-viewport-wrapper {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .projects-hover-orbit-container {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    padding: 20px 16px !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .projects-pentagon-orbit {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    gap: 60px !important; 
+    perspective: none !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .project-card {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    left: auto !important; /* Clear desktop calculations */
+    top: 90px !important;
+    width: 100% !important;
+    height: 380px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.08), 0 15px 35px rgba(11, 31, 58, 0.1);
+    border-radius: 20px;
+    pointer-events: auto !important;
+    z-index: var(--card-index) !important; 
+    margin-bottom: 0 !important;
+  }
+
+  .project-card:nth-child(1) { transform: scale(0.92); }
+  .project-card:nth-child(2) { transform: scale(0.94); }
+  .project-card:nth-child(3) { transform: scale(0.96); }
+  .project-card:nth-child(4) { transform: scale(0.98); }
+  .project-card:nth-child(5) { transform: scale(1); }
+
+  .proj-card-desc {
+    opacity: 1 !important;
+    transform: none !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* --- What We Do Vertical Marquee --- */
+@keyframes marquee-vertical-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-vertical-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-vertical-up {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-vertical-up 20s linear infinite;
+}
+
+.animate-marquee-vertical-down {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-vertical-down 20s linear infinite;
+}
+
+.animate-marquee-vertical-up:hover,
+.animate-marquee-vertical-down:hover {
+  animation-play-state: paused;
+}
+
+/* --- Interactive Projects Luxury Effects & Concentric Spins --- */
+@keyframes spin-slow-forward {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-spin-slow-forward {
+  animation: spin-slow-forward 140s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 90s linear infinite;
+}
+
+.animate-spin-slow-super-forward {
+  animation: spin-slow-forward 200s linear infinite;
+}
+
+/* Premium glass-like reflection sweep */
+@media (min-width: 1024px) {
+  .project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    pointer-events: none;
+    z-index: 6;
+  }
+
+  .project-card:hover::after {
+    left: 150%;
+    transition: left 0.95s ease;
+  }
+}
