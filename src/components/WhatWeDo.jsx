@@ -167,7 +167,7 @@ const WhatWeDo = () => {
           </div>
 
           {/* Right Side: Dual-Column Vertical Marquee */}
-          <div className="lg:col-span-7 h-[600px] overflow-hidden grid grid-cols-2 gap-4 relative">
+          <div className="lg:col-span-7 h-[600px] overflow-hidden grid grid-cols-1 sm:grid-cols-2 gap-4 relative">
             
             {/* Top & Bottom ambient luxury shadow fade overlays */}
             <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-primary-bg to-transparent z-10 pointer-events-none" />
@@ -207,9 +207,9 @@ const WhatWeDo = () => {
                 ))}
               </div>
             </div>
-
+ 
             {/* Column 2: Vertical marquee moving up (bottom to top) */}
-            <div className="h-full overflow-hidden flex flex-col">
+            <div className="h-full overflow-hidden flex flex-col hidden sm:flex">
               <div className="animate-marquee-vertical-up gap-4 flex flex-col">
                 {doubleCol2.map((service, idx) => (
                   <div 

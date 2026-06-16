@@ -122,7 +122,7 @@ const HistoryAndPolicies = () => {
                       <span className="text-[10px] tracking-[0.25em] text-luxury-highlight font-bold uppercase font-sans">
                         {item.subtitle}
                       </span>
-                      <h3 className="font-display text-xl md:text-3xl font-semibold text-white tracking-wide border-b border-white/10 pb-3">
+                      <h3 className="font-display text-lg sm:text-2xl md:text-3xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words">
                         {item.title}
                       </h3>
                       <div className="flex flex-col gap-3 font-sans text-xs text-white/80 leading-relaxed font-light">
@@ -141,7 +141,7 @@ const HistoryAndPolicies = () => {
                           Corporate Governance
                         </span>
                       </div>
-                      <h3 className="font-display text-lg md:text-2xl font-semibold text-white tracking-wide border-b border-white/10 pb-3">
+                      <h3 className="font-display text-base sm:text-lg md:text-2xl font-semibold text-white tracking-wide leading-snug border-b border-white/10 pb-3 break-words">
                         {item.title}
                       </h3>
                       <p className="font-sans text-xs md:text-sm text-white/85 leading-relaxed font-light">
