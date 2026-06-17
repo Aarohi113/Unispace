@@ -87,11 +87,11 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   const coordsOpacity = useTransform(smoothProgress, [0, 0.35, 0.55, 0.85], [0, 0.3, 0.3, 0]);
 
   return (
-    // Parent scroll track: 105vh on mobile, 180vh on desktop
-    <div ref={containerRef} className="relative h-[105vh] md:h-[180vh] bg-primary-bg">
+    // Parent scroll track: 130vh on mobile, 180vh on desktop
+    <div ref={containerRef} className="relative h-[130vh] md:h-[180vh] bg-primary-bg">
 
-      {/* Sticky container: 65vh on mobile, h-screen on desktop */}
-      <div className="sticky top-0 h-[65vh] md:h-screen w-full overflow-hidden flex flex-col justify-end pt-20 pb-6 md:pb-10">
+      {/* Sticky container: 100dvh on mobile, h-screen on desktop */}
+      <div className="sticky top-0 h-[100dvh] md:h-screen w-full overflow-hidden flex flex-col justify-end pt-20 pb-6 md:pb-10">
 
         {/* Background Video Wrapper - animated on scroll */}
         <motion.div
@@ -100,7 +100,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             y: videoY,
             borderRadius: videoBorderRadius
           }}
-          className="absolute top-0 md:top-0 h-[65vh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
+          className="absolute top-0 md:top-0 h-[100dvh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
           {/* Video 1 (video-1.mp4 local asset) */}
           <video
@@ -148,7 +148,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
         {/* Hero Content Overlay (fades out and slides up on scroll) */}
         <motion.div
           style={{ opacity: textOpacity, y: textY }}
-          className="absolute top-[80px] left-0 right-0 h-[calc(65vh-80px)] md:relative md:h-auto md:top-auto md:left-auto md:right-auto z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center md:block mb-5 md:mb-6 pointer-events-none"
+          className="absolute top-[80px] left-0 right-0 h-[calc(100dvh-80px)] md:relative md:h-auto md:top-auto md:left-auto md:right-auto z-20 max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col justify-center md:block mb-5 md:mb-6 pointer-events-none"
         >
           <div className="max-w-3xl text-left pointer-events-auto">
             {/* Tag */}

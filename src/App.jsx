@@ -250,10 +250,10 @@ function App() {
               Quick Links
             </h4>
             <div className="flex flex-col items-center md:items-start gap-2.5 text-xs font-sans">
-              <a href="#home" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Home Workspace</a>
-              <a href="#projects" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Case Studies</a>
-              <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Design & Contracting</a>
-              <a href="#about" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Corporate Ethos</a>
+              <a href="#home" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Home</a>
+              <a href="#projects" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Projects</a>
+              <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Services</a>
+              <a href="#contact" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Contact Us</a>
             </div>
           </div>
 
