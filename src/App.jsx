@@ -13,6 +13,7 @@ import CallToAction from './components/CallToAction';
 import HistoryAndPolicies from './components/HistoryAndPolicies';
 import unispaceLogo from './assets/unispacelogo.png';
 import Preloader from './components/Preloader';
+import AboutUs from './components/AboutUs';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,35 @@ function App() {
       document.body.style.overflow = '';
     };
   }, [isLoading]);
+
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#about') {
+        setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setCurrentPage('home');
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (currentPage === 'home' && window.location.hash) {
+      const timer = setTimeout(() => {
+        const id = window.location.hash.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -118,48 +148,54 @@ function App() {
       {/* Floating Navbar */}
       <Navbar onOpenConsultation={() => setIsModalOpen(true)} />
 
-      {/* Main Full-Screen Hero */}
-      <Hero 
-        onExploreProjects={() => {
-          document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-        }}
-        onContactUs={() => setIsModalOpen(true)} 
-      />
+      {currentPage === 'about' ? (
+        <AboutUs />
+      ) : (
+        <>
+          {/* Main Full-Screen Hero */}
+          <Hero 
+            onExploreProjects={() => {
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            onContactUs={() => setIsModalOpen(true)} 
+          />
 
-      {/* Stats Cards Section (scrolls naturally between Hero and TrustStripe) */}
-      <section className="py-12 bg-primary-bg relative z-25 border-b border-black/5 -mt-6">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {stats.map((statItem, index) => (
-              <StatsCard
-                key={index}
-                stat={statItem.stat}
-                label={statItem.label}
-                icon={statItem.icon}
-                delay={0.15 * index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Stats Cards Section (scrolls naturally between Hero and TrustStripe) */}
+          <section className="py-12 bg-primary-bg relative z-25 border-b border-black/5 -mt-6">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                {stats.map((statItem, index) => (
+                  <StatsCard
+                    key={index}
+                    stat={statItem.stat}
+                    label={statItem.label}
+                    icon={statItem.icon}
+                    delay={0.15 * index}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
 
-      {/* Infinite Scrolling Corporate Partners Logo Stripe */}
-      <TrustStripe />
+          {/* Infinite Scrolling Corporate Partners Logo Stripe */}
+          <TrustStripe />
 
-      {/* Dynamic Who We Are Section */}
-      <WhoWeAre />
+          {/* Dynamic Who We Are Section */}
+          <WhoWeAre />
 
-      {/* Interactive Project Showcase with 3D Explode & Mobile Sticky Stack */}
-      <InteractiveProjects />
+          {/* Interactive Project Showcase with 3D Explode & Mobile Sticky Stack */}
+          <InteractiveProjects />
 
-      {/* Animated Dual-Marquee Services Overview */}
-      <WhatWeDo />
+          {/* Animated Dual-Marquee Services Overview */}
+          <WhatWeDo />
 
-      {/* Scroll-pinned Company History and Policies Stacking Section */}
-      <HistoryAndPolicies />
+          {/* Scroll-pinned Company History and Policies Stacking Section */}
+          <HistoryAndPolicies />
 
-      {/* Call to Action Video Section */}
-      <CallToAction onOpenConsultation={() => setIsModalOpen(true)} />
+          {/* Call to Action Video Section */}
+          <CallToAction onOpenConsultation={() => setIsModalOpen(true)} />
+        </>
+      )}
 
       {/* Luxury Light Footer */}
       <footer id="contact" className="bg-white border-t border-black/10 text-text-charcoal/80 py-12 md:py-16 relative">
