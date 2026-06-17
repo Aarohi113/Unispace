@@ -53,7 +53,7 @@ const servicesList = [
     tag: "Trenchless Engineering",
     title: "HDD method services laying",
     desc: "Horizontal Directional Drilling for installing telecom, power, and water utilities underground with minimal surface disruption and precise directional guidance.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    image: "/hdd-services-laying.jpg",
     icon: HardDrive
   },
   {
@@ -61,7 +61,7 @@ const servicesList = [
     tag: "Piping Networks",
     title: "Water / Piping Distribution and Sanitation Work",
     desc: "Engineering reliable main water lines, distribution manifolds, and complete sanitation networks for corporate towers, campuses, and industrial sites.",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80",
+    image: "/water-piping-distribution.jpg",
     icon: Droplets
   },
   {
@@ -69,7 +69,7 @@ const servicesList = [
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
+    image: "/borewell-rainwater-harvesting.jpg",
     icon: CloudRain
   },
   {
@@ -77,7 +77,7 @@ const servicesList = [
     tag: "Transportation Link",
     title: "RCC Road",
     desc: "Heavy-duty reinforced cement concrete roadways constructed for industrial estates, commercial complex driveways, and long-term structural durability.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    image: "/rcc-road.jpg",
     icon: Milestone
   },
   {
@@ -85,7 +85,7 @@ const servicesList = [
     tag: "Demolition & Site Prep",
     title: "Major Demolition Work",
     desc: "Controlled and safe demolition of commercial building blocks, structural concrete walls, and old facilities using advanced machinery and strict safety regulations.",
-    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80",
+    image: "/major-demolition.jpg",
     icon: Hammer
   },
   {
@@ -93,7 +93,7 @@ const servicesList = [
     tag: "Prefabricated Structures",
     title: "Modern Pre-Fab buildings and Industrial Shed",
     desc: "High-speed assembly of steel pre-fabricated structures, modular storage sheds, and industrial warehouses built with high structural wind resistance.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    image: "/prefab-buildings.jpg",
     icon: Warehouse
   },
   {
@@ -101,7 +101,7 @@ const servicesList = [
     tag: "MEP Engineering",
     title: "MEP",
     desc: "Integrated Mechanical, Electrical, and Plumbing engineering services, executing complex air conditioning ducting, corporate electrical grids, and automated fire controls.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    image: "/mep-engineering.jpg",
     icon: Cpu
   },
   {
@@ -109,7 +109,7 @@ const servicesList = [
     tag: "Metal Fabrication",
     title: "Major Fabrication",
     desc: "Heavy structural steel fabrication, manufacturing secure steel structural trusses, structural columns, perimeter railings, and customized access stairs.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    image: "/major-fabrication.jpg",
     icon: Wrench
   },
   {
@@ -117,7 +117,7 @@ const servicesList = [
     tag: "Civil Infrastructure",
     title: "Miscellaneous Civil Work",
     desc: "Essential corporate civil solutions including custom building plastering, masonry partitions, wall tiling, concrete foundation pads, and structural repair works.",
-    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80",
+    image: "/misc-civil-works.jpg",
     icon: HardHat
   },
   {
@@ -125,7 +125,7 @@ const servicesList = [
     tag: "Beautification Layouts",
     title: "External Developments and beautifications",
     desc: "Hard and soft landscaping design execution, custom pathways, exterior lighting layouts, parking spaces, and boundary wall enhancements.",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80",
+    image: "/external-beautification.jpg",
     icon: Trees
   },
   {
