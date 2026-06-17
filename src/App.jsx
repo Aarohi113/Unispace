@@ -14,6 +14,7 @@ import HistoryAndPolicies from './components/HistoryAndPolicies';
 import unispaceLogo from './assets/unispacelogo.png';
 import Preloader from './components/Preloader';
 import AboutUs from './components/AboutUs';
+import AllProjects from './components/AllProjects';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,9 @@ function App() {
     const handleHashChange = () => {
       if (window.location.hash === '#about') {
         setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (window.location.hash === '#projects-all') {
+        setCurrentPage('projects-all');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -150,6 +154,8 @@ function App() {
 
       {currentPage === 'about' ? (
         <AboutUs onOpenConsultation={() => setIsModalOpen(true)} />
+      ) : currentPage === 'projects-all' ? (
+        <AllProjects onOpenConsultation={() => setIsModalOpen(true)} />
       ) : (
         <>
           {/* Main Full-Screen Hero */}

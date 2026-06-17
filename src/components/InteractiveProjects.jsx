@@ -176,6 +176,17 @@ const InteractiveProjects = () => {
           </motion.div>
         </div>
 
+        {/* View All Projects Button */}
+        <div className="flex justify-center mt-12 pb-8">
+          <a 
+            href="#projects-all" 
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-brand-accent/40 text-brand-accent hover:bg-brand-accent hover:text-white rounded-full font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5"
+          >
+            View All Projects
+            <span className="text-sm">→</span>
+          </a>
+        </div>
+
       </div>
     </div>
   );
