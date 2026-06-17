@@ -94,8 +94,8 @@ function App() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
-    // Read Google Web App URL from environment variables
-    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
+    // Read Google Web App URL from environment variables with hardcoded fallback
+    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby2H0VQfhbgtEqSdJFqGr1k7TXi0LnOL6naeWPvM0EQxe45Cm9JXtBAMc0j3mKPHV1G4A/exec";
     
     if (webhookUrl) {
       try {
@@ -103,9 +103,9 @@ function App() {
           method: "POST",
           mode: "no-cors",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/json"
           },
-          body: new URLSearchParams(formData).toString()
+          body: JSON.stringify(formData)
         });
       } catch (error) {
         console.error("Error submitting consultation form:", error);
@@ -139,8 +139,8 @@ function App() {
       message: "Submitted from quick footer form."
     };
 
-    // Read Google Web App URL from environment variables
-    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
+    // Read Google Web App URL from environment variables with hardcoded fallback
+    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby2H0VQfhbgtEqSdJFqGr1k7TXi0LnOL6naeWPvM0EQxe45Cm9JXtBAMc0j3mKPHV1G4A/exec";
     
     if (webhookUrl) {
       try {
@@ -148,9 +148,9 @@ function App() {
           method: "POST",
           mode: "no-cors",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "application/json"
           },
-          body: new URLSearchParams(footerData).toString()
+          body: JSON.stringify(footerData)
         });
       } catch (error) {
         console.error("Error submitting footer inquiry form:", error);
