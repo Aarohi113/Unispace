@@ -74,7 +74,11 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 1: HCL (Central Master Card) */}
-            <div className="project-card central-master-card" style={{ '--card-index': 1 }}>
+            <div 
+              className="project-card central-master-card cursor-pointer" 
+              style={{ '--card-index': 1, cursor: 'pointer' }}
+              onClick={() => window.location.hash = '#projects-all'}
+            >
               <img 
                 src="/hcl-reception.jpg" 
                 alt="HCL Workspace" 
@@ -87,16 +91,20 @@ const InteractiveProjects = () => {
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Interior built with premium acoustic custom ceiling elements and modern turnkey fit-outs.
                 </p>
-                <a href="#contact" className="view-details-link font-sans text-xs tracking-wider">
+                <a href="#projects-all" className="view-details-link font-sans text-xs tracking-wider" onClick={(e) => e.stopPropagation()}>
                   View Details ↗
                 </a>
               </div>
             </div>
 
             {/* CARD 2: Microsoft Hub (Top Left Satellite Card) */}
-            <div className="project-card exploded-satellite-card pos-top-left" style={{ '--card-index': 2 }}>
+            <div 
+              className="project-card exploded-satellite-card pos-top-left cursor-pointer" 
+              style={{ '--card-index': 2, cursor: 'pointer' }}
+              onClick={() => window.location.hash = '#projects-all'}
+            >
               <img 
-                src="https://unispacecontracts.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-103612.png" 
+                src="/microsoft-office.jpg" 
                 alt="Microsoft Corporate Hub" 
                 loading="lazy" 
                 decoding="async"
@@ -107,14 +115,18 @@ const InteractiveProjects = () => {
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Ergonomic architectural layout engineered for high productivity corporate teams.
                 </p>
-                <a href="#contact" className="view-details-link font-sans text-xs tracking-wider">
+                <a href="#projects-all" className="view-details-link font-sans text-xs tracking-wider" onClick={(e) => e.stopPropagation()}>
                   View Details ↗
                 </a>
               </div>
             </div>
 
             {/* CARD 3: Genpact - Interior (Top Right Satellite Card) */}
-            <div className="project-card exploded-satellite-card pos-top-right" style={{ '--card-index': 3 }}>
+            <div 
+              className="project-card exploded-satellite-card pos-top-right cursor-pointer" 
+              style={{ '--card-index': 3, cursor: 'pointer' }}
+              onClick={() => window.location.hash = '#projects-all'}
+            >
               <img 
                 src="/genpact-interior.jpg" 
                 alt="Genpact - Interior" 
@@ -127,16 +139,20 @@ const InteractiveProjects = () => {
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Tech-led collaborative spaces integrated with biophilic design systems.
                 </p>
-                <a href="#contact" className="view-details-link font-sans text-xs tracking-wider">
+                <a href="#projects-all" className="view-details-link font-sans text-xs tracking-wider" onClick={(e) => e.stopPropagation()}>
                   View Details ↗
                 </a>
               </div>
             </div>
 
             {/* CARD 4: TATA Project (Bottom Left Satellite Card) */}
-            <div className="project-card exploded-satellite-card pos-bottom-left" style={{ '--card-index': 4 }}>
+            <div 
+              className="project-card exploded-satellite-card pos-bottom-left cursor-pointer" 
+              style={{ '--card-index': 4, cursor: 'pointer' }}
+              onClick={() => window.location.hash = '#projects-all'}
+            >
               <img 
-                src="https://unispacecontracts.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-104551.png" 
+                src="/tata-reception.jpg" 
                 alt="TATA Project" 
                 loading="lazy" 
                 decoding="async"
@@ -147,16 +163,20 @@ const InteractiveProjects = () => {
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Minimalistic monochromatic theme engineered with luxury executive lounges.
                 </p>
-                <a href="#contact" className="view-details-link font-sans text-xs tracking-wider">
+                <a href="#projects-all" className="view-details-link font-sans text-xs tracking-wider" onClick={(e) => e.stopPropagation()}>
                   View Details ↗
                 </a>
               </div>
             </div>
 
             {/* CARD 5: Gail Project (Bottom Right Satellite Card) */}
-            <div className="project-card exploded-satellite-card pos-bottom-right" style={{ '--card-index': 5 }}>
+            <div 
+              className="project-card exploded-satellite-card pos-bottom-right cursor-pointer" 
+              style={{ '--card-index': 5, cursor: 'pointer' }}
+              onClick={() => window.location.hash = '#projects-all'}
+            >
               <img 
-                src="https://unispacecontracts.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-104307.png" 
+                src="/gail-workspace.png" 
                 alt="Gail Project" 
                 loading="lazy" 
                 decoding="async"
@@ -167,7 +187,7 @@ const InteractiveProjects = () => {
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Premium modern conference layouts backed by automated utilities.
                 </p>
-                <a href="#contact" className="view-details-link font-sans text-xs tracking-wider">
+                <a href="#projects-all" className="view-details-link font-sans text-xs tracking-wider" onClick={(e) => e.stopPropagation()}>
                   View Details ↗
                 </a>
               </div>
