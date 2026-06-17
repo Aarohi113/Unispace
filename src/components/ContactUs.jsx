@@ -29,9 +29,9 @@ const ContactUs = () => {
           method: "POST",
           mode: "no-cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
           },
-          body: JSON.stringify(formData)
+          body: new URLSearchParams(formData).toString()
         });
       } catch (error) {
         console.error("Error submitting contact form:", error);

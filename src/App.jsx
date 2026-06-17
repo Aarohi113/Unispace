@@ -103,9 +103,9 @@ function App() {
           method: "POST",
           mode: "no-cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
           },
-          body: JSON.stringify(formData)
+          body: new URLSearchParams(formData).toString()
         });
       } catch (error) {
         console.error("Error submitting consultation form:", error);
@@ -148,9 +148,9 @@ function App() {
           method: "POST",
           mode: "no-cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded"
           },
-          body: JSON.stringify(footerData)
+          body: new URLSearchParams(footerData).toString()
         });
       } catch (error) {
         console.error("Error submitting footer inquiry form:", error);
