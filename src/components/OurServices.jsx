@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Settings, CheckCircle2, ArrowRight } from 'lucide-react';
+import { 
+  Building2, Paintbrush, Laptop, Server, Layers, HardDrive, 
+  Droplets, CloudRain, Milestone, Hammer, Warehouse, Cpu, 
+  Wrench, HardHat, Trees, Shield, Leaf, Home 
+} from 'lucide-react';
 import CallToAction from './CallToAction';
 
 const servicesList = [
@@ -9,126 +13,144 @@ const servicesList = [
     tag: "Commercial Development",
     title: "Commercial / Institution & others urban project",
     desc: "Turnkey urban developments, educational institutes, and retail complexes designed and executed to meet global institutional safety and performance standards.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    icon: Building2
   },
   {
     num: "02",
     tag: "Corporate Workspace",
     title: "Interior Work",
     desc: "Premium corporate fit-out works executing high-end partitions, false ceilings, custom joinery, and corporate boardroom designs with executive finishes.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    icon: Paintbrush
   },
   {
     num: "03",
     tag: "Modular Turnkey",
     title: "Creation of plug and play offices",
     desc: "Fully integrated, move-in ready workspace fit-outs pre-configured with structural furniture, power backup, IT networking, and secure utility connections.",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+    icon: Laptop
   },
   {
     num: "04",
     tag: "IT Infrastructure",
     title: "Data Center/ Server Room Creations",
     desc: "High-precision network server rooms and data centers designed with reliable hot/cold aisle cooling systems, backup power, and advanced safety protocols.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    icon: Server
   },
   {
     num: "05",
     tag: "Heavy Utilities",
     title: "Oil, Gas and Petrochemical pipe line and Civil works",
     desc: "Expert heavy utility civil execution for industrial pipelines, handling excavation, deep trenching, structural concrete pads, and robust protective encasements.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    icon: Layers
   },
   {
     num: "06",
     tag: "Trenchless Engineering",
     title: "HDD method services laying",
     desc: "Horizontal Directional Drilling for installing telecom, power, and water utilities underground with minimal surface disruption and precise directional guidance.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    icon: HardDrive
   },
   {
     num: "07",
     tag: "Piping Networks",
     title: "Water / Piping Distribution and Sanitation Work",
     desc: "Engineering reliable main water lines, distribution manifolds, and complete sanitation networks for corporate towers, campuses, and industrial sites.",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=1200&q=80",
+    icon: Droplets
   },
   {
     num: "08",
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80",
+    icon: CloudRain
   },
   {
     num: "09",
     tag: "Transportation Link",
     title: "RCC Road",
     desc: "Heavy-duty reinforced cement concrete roadways constructed for industrial estates, commercial complex driveways, and long-term structural durability.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    icon: Milestone
   },
   {
     num: "10",
     tag: "Demolition & Site Prep",
     title: "Major Demolition Work",
     desc: "Controlled and safe demolition of commercial building blocks, structural concrete walls, and old facilities using advanced machinery and strict safety regulations.",
-    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80",
+    icon: Hammer
   },
   {
     num: "11",
     tag: "Prefabricated Structures",
     title: "Modern Pre-Fab buildings and Industrial Shed",
     desc: "High-speed assembly of steel pre-fabricated structures, modular storage sheds, and industrial warehouses built with high structural wind resistance.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    icon: Warehouse
   },
   {
     num: "12",
     tag: "MEP Engineering",
     title: "MEP",
     desc: "Integrated Mechanical, Electrical, and Plumbing engineering services, executing complex air conditioning ducting, corporate electrical grids, and automated fire controls.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    icon: Cpu
   },
   {
     num: "13",
     tag: "Metal Fabrication",
     title: "Major Fabrication",
     desc: "Heavy structural steel fabrication, manufacturing secure steel structural trusses, structural columns, perimeter railings, and customized access stairs.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    icon: Wrench
   },
   {
     num: "14",
     tag: "Civil Infrastructure",
     title: "Miscellaneous Civil Work",
     desc: "Essential corporate civil solutions including custom building plastering, masonry partitions, wall tiling, concrete foundation pads, and structural repair works.",
-    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1200&q=80",
+    icon: HardHat
   },
   {
     num: "15",
     tag: "Beautification Layouts",
     title: "External Developments and beautifications",
     desc: "Hard and soft landscaping design execution, custom pathways, exterior lighting layouts, parking spaces, and boundary wall enhancements.",
-    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80",
+    icon: Trees
   },
   {
     num: "16",
     tag: "Sound & Thermal Shield",
     title: "Sun Controls, Heat and Sound Proofing",
     desc: "High-performance thermal and acoustic insulation fit-outs, installing heat-reflective window films, soundproofing boards, and custom wall padding.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    icon: Shield
   },
   {
     num: "17",
     tag: "Environmental Systems",
     title: "Treatment Plants and Environments Protections",
     desc: "Turnkey waste and water treatment facilities, engineering water recycling plants, environmental filter systems, and sustainable discharge systems.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    icon: Leaf
   },
   {
     num: "18",
     tag: "Project Mobilization",
     title: "Portable Houses, Site offices, and Mega Projects start up activities",
     desc: "Fast startup mobilization including premium mobile site offices, bunkhouses, secure storage containers, perimeter fencing, and initial project utility setups.",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    icon: Home
   }
 ];
 
@@ -190,69 +212,108 @@ const OurServices = ({ onOpenConsultation }) => {
         <div className="relative z-10 flex flex-col gap-24 md:gap-36">
           {servicesList.map((service, index) => {
             const isEven = index % 2 === 0;
+            const IconComponent = service.icon;
             return (
               <div 
                 key={service.num}
                 className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center relative"
               >
-
-                {/* Left Side: Content or Image */}
-                <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-1 text-right' : 'order-1 md:order-2 text-left'}`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -60 : 60 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, margin: "-120px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className={`flex flex-col gap-3 ${isEven ? 'items-end' : 'items-start'}`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {isEven && (
-                        <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
-                          {service.tag}
-                        </span>
-                      )}
-                      <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-accent/10 border border-brand-accent/20 text-xs font-bold text-brand-accent font-sans">
-                        {service.num}
+                
+                {/* Left Side: Content (when isEven is true) or Image (when isEven is false) */}
+                <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-1' : 'order-1 md:order-2'}`}>
+                  {isEven ? (
+                    <motion.div
+                      initial={{ opacity: 0, x: -60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, margin: "-120px" }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="flex flex-col gap-3 text-left items-start"
+                    >
+                      {/* Icon container */}
+                      <div className="w-14 h-14 rounded-full border border-luxury-highlight/20 bg-luxury-highlight/5 flex items-center justify-center mb-2">
+                        <IconComponent className="w-6 h-6 text-brand-accent stroke-[1.5]" />
+                      </div>
+                      <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
+                        {service.tag}
                       </span>
-                      {!isEven && (
-                        <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
-                          {service.tag}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="font-display text-xl sm:text-2xl font-light text-primary-dark tracking-wide leading-snug">
-                      {service.title}
-                    </h3>
-                    <p className="font-sans text-xs md:text-sm text-text-charcoal/70 leading-relaxed font-light max-w-lg">
-                      {service.desc}
-                    </p>
-                  </motion.div>
+                      <h3 className="font-display text-xl sm:text-2xl font-light text-primary-dark tracking-wide leading-snug">
+                        {service.title}
+                      </h3>
+                      <p className="font-sans text-xs md:text-sm text-text-charcoal/70 leading-relaxed font-light max-w-lg">
+                        {service.desc}
+                      </p>
+                    </motion.div>
+                  ) : (
+                    // Image container
+                    <motion.div
+                      initial={{ opacity: 0, x: -60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, margin: "-120px" }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-white group"
+                    >
+                      <div className="aspect-[16/10] overflow-hidden relative">
+                        <img 
+                          src={service.image} 
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent pointer-events-none" />
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Spacer in middle for line alignment (2 columns) */}
                 <div className="hidden md:block col-span-2" />
 
-                {/* Right Side: Image or Content */}
+                {/* Right Side: Image (when isEven is true) or Content (when isEven is false) */}
                 <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? 60 : -60 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, margin: "-120px" }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-white group"
-                  >
-                    <div className="aspect-[16/10] overflow-hidden relative">
-                      <img 
-                        src={service.image} 
-                        alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent pointer-events-none" />
-                    </div>
-                  </motion.div>
+                  {!isEven ? (
+                    <motion.div
+                      initial={{ opacity: 0, x: 60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, margin: "-120px" }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="flex flex-col gap-3 text-left items-start"
+                    >
+                      {/* Icon container */}
+                      <div className="w-14 h-14 rounded-full border border-luxury-highlight/20 bg-luxury-highlight/5 flex items-center justify-center mb-2">
+                        <IconComponent className="w-6 h-6 text-brand-accent stroke-[1.5]" />
+                      </div>
+                      <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
+                        {service.tag}
+                      </span>
+                      <h3 className="font-display text-xl sm:text-2xl font-light text-primary-dark tracking-wide leading-snug">
+                        {service.title}
+                      </h3>
+                      <p className="font-sans text-xs md:text-sm text-text-charcoal/70 leading-relaxed font-light max-w-lg">
+                        {service.desc}
+                      </p>
+                    </motion.div>
+                  ) : (
+                    // Image container
+                    <motion.div
+                      initial={{ opacity: 0, x: 60 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, margin: "-120px" }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-white group"
+                    >
+                      <div className="aspect-[16/10] overflow-hidden relative">
+                        <img 
+                          src={service.image} 
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/20 to-transparent pointer-events-none" />
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
 
               </div>
