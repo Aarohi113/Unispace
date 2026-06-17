@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 import CallToAction from './CallToAction';
 
 const AllProjects = ({ onOpenConsultation }) => {
@@ -211,15 +211,6 @@ const AllProjects = ({ onOpenConsultation }) => {
                     <p className="text-sm text-text-charcoal/70 mt-3 font-sans leading-relaxed">
                       {project.description}
                     </p>
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-black/5 flex items-center justify-between">
-                    <span className="text-xs font-semibold text-brand-accent uppercase tracking-wider group-hover:underline">
-                      Explore Case Study
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-primary-bg border border-black/5 flex items-center justify-center group-hover:bg-brand-accent group-hover:text-white transition-all duration-300">
-                      <ArrowUpRight className="w-4 h-4" />
-                    </div>
                   </div>
                 </div>
               </motion.div>
