@@ -73,6 +73,67 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* 1.5. Corporate Overview & Trust Section */}
+      <section className="py-20 bg-white border-b border-black/5 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Left side: Heading/Tagline */}
+            <motion.div 
+              variants={sectionVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-100px" }}
+              className="lg:col-span-5 flex flex-col items-start"
+            >
+              <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-brand-accent uppercase block mb-3">
+                CORPORATE PROFILE
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-light text-primary-dark tracking-wide leading-tight">
+                A Premier Vanguard in <br />
+                <span className="font-semibold text-secondary-accent">Civil &amp; Corporate Fit-Outs</span>
+              </h2>
+              <div className="w-12 h-[2px] bg-brand-accent mt-6" />
+            </motion.div>
+
+            {/* Right side: Refined Copy & Clients */}
+            <motion.div 
+              variants={sectionVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-100px" }}
+              className="lg:col-span-7 flex flex-col gap-8"
+            >
+              <p className="text-base md:text-lg text-text-charcoal/80 leading-relaxed font-sans font-light">
+                Unispace Contracts Private Limited stands as a premier vanguard in the civil and interior fit-out industry, orchestrating high-end design-build solutions tailored exclusively for modern corporate environments. With an illustrious legacy of execution excellence, we have collaborated with global industry giants, engineering environments that foster innovation and growth.
+              </p>
+              
+              <p className="text-sm md:text-base text-text-charcoal/65 leading-relaxed font-sans">
+                Our comprehensive expertise spans the design, execution, and master management of large-scale commercial infrastructures—harmonizing strict operational efficiency, sophisticated design aesthetics, and seamless functionality.
+              </p>
+
+              {/* Client Logotypes list/badges */}
+              <div className="pt-6 border-t border-black/5">
+                <span className="text-[10px] font-semibold tracking-wider text-text-charcoal/40 uppercase block mb-4">
+                  TRUSTED COLLABORATORS &amp; PARTNERS
+                </span>
+                <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
+                  {['HCL', 'Genpact', 'Microsoft', 'Google', 'Gail', 'Adani', 'Samsung'].map((client) => (
+                    <span 
+                      key={client} 
+                      className="text-xs md:text-sm font-semibold text-text-charcoal/60 bg-primary-bg px-3 py-1.5 rounded-md border border-black/5 hover:border-brand-accent/25 hover:text-brand-accent transition-all duration-300"
+                    >
+                      {client}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 2. Section 2: Left Image, Right Text */}
       <section className="py-20 md:py-28 border-b border-black/5 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
