@@ -68,6 +68,7 @@ function App() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [footerSubmitted, setFooterSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -98,6 +99,15 @@ function App() {
         message: ''
       });
     }, 2500);
+  };
+
+  const handleFooterSubmit = (e) => {
+    e.preventDefault();
+    // Simulate submission
+    setFooterSubmitted(true);
+    setTimeout(() => {
+      setFooterSubmitted(false);
+    }, 4000);
   };
 
   const stats = [
@@ -330,17 +340,53 @@ function App() {
             </div>
           </div>
 
-          {/* Column 4: Newsletter / Connect */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
+          {/* Column 4: Contact Form */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4 w-full">
             <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
-              Inquiries
+              Quick Inquiry
             </h4>
-            <p className="text-xs text-text-charcoal/60 leading-relaxed font-light mb-2 font-sans">
-              Sign up for our biannual architectural journal or request an appointment.
-            </p>
-            <Button variant="primary" onClick={() => setIsModalOpen(true)} className="w-full">
-              Get in Touch
-            </Button>
+            {footerSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex flex-col items-center md:items-start text-center md:text-left py-4"
+              >
+                <div className="flex items-center gap-2 text-secondary-accent font-semibold text-xs mb-2">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Message Sent Successfully</span>
+                </div>
+                <p className="text-[11px] text-text-charcoal/60 leading-relaxed max-w-[200px]">
+                  Thank you! Our representative will call you shortly.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleFooterSubmit} className="w-full flex flex-col gap-3">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  className="w-full bg-primary-bg border border-black/10 px-4 py-2.5 text-xs focus:outline-none focus:border-brand-accent font-sans text-primary-dark rounded-none"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder="Contact Number"
+                  className="w-full bg-primary-bg border border-black/10 px-4 py-2.5 text-xs focus:outline-none focus:border-brand-accent font-sans text-primary-dark rounded-none"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email Address"
+                  className="w-full bg-primary-bg border border-black/10 px-4 py-2.5 text-xs focus:outline-none focus:border-brand-accent font-sans text-primary-dark rounded-none"
+                />
+                <Button variant="primary" type="submit" className="w-full py-3 text-xs uppercase tracking-widest font-semibold justify-center rounded-none mt-1">
+                  Send Message
+                </Button>
+              </form>
+            )}
           </div>
 
         </div>
