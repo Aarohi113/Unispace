@@ -35,7 +35,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "High-Tech Corporate Hub",
       location: "Noida & Gurugram, India",
       year: "2026",
-      image: "/microsoft-office.jpg",
+      image: "/microsoft.jpeg",
       description: "Advanced software R&D workspace design-build featuring premium acoustic pods and flexible workstation systems."
     },
     {
@@ -51,7 +51,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Premium Corporate Offices",
       location: "Mumbai, India",
       year: "2025",
-      image: "/tata-reception.jpg",
+      image: "/tcs.jpeg",
       description: "High-end luxury corporate corporate offices with custom marble lobby finishes and executive boardrooms."
     },
     {
@@ -98,17 +98,17 @@ const AllProjects = ({ onOpenConsultation }) => {
 
   // Framer Motion animation variants
   const cardVariants = (index) => ({
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: index % 2 === 0 ? -100 : 100,
       y: 30
     },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
+    visible: {
+      opacity: 1,
+      x: 0,
       y: 0,
-      transition: { 
-        duration: 0.8, 
+      transition: {
+        duration: 0.8,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -116,14 +116,14 @@ const AllProjects = ({ onOpenConsultation }) => {
 
   return (
     <div className="bg-primary-bg min-h-screen pt-[80px] font-sans text-text-charcoal overflow-x-hidden">
-      
+
       {/* 1. Hero Section with Video */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden bg-primary-dark">
         {/* Background Video */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 scale-105"
         >
@@ -134,7 +134,7 @@ const AllProjects = ({ onOpenConsultation }) => {
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -142,7 +142,7 @@ const AllProjects = ({ onOpenConsultation }) => {
           >
             OUR WORKS
           </motion.span>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -150,7 +150,7 @@ const AllProjects = ({ onOpenConsultation }) => {
           >
             Engineering <span className="font-semibold text-luxury-highlight">Masterpieces</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -164,7 +164,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       {/* 2. Grid Section - 2 Columns with Left/Right Scroll Reveal */}
       <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
             {projects.map((project, index) => (
               <motion.div
@@ -177,8 +177,8 @@ const AllProjects = ({ onOpenConsultation }) => {
               >
                 {/* Image Container with Zoom Effect */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-primary-dark cursor-pointer">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
                   />
