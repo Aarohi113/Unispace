@@ -21,7 +21,7 @@ const ContactUs = () => {
     e.preventDefault();
     
     // Paste your Google Web App URL here
-    const webhookUrl = "https://script.google.com/macros/s/AKfycbxvZ8WA77Okh9p0iAnRc-oHdcXtEU6-1r_sYgPXqUOozX82W_crU5q4EyAPpR8E71FuZg/exec";
+    const webhookUrl = "https://script.google.com/macros/s/AKfycby2H0VQfhbgtEqSdJFqGr1k7TXi0LnOL6naeWPvM0EQxe45Cm9JXtBAMc0j3mKPHV1G4A/exec";
     
     if (webhookUrl) {
       try {
