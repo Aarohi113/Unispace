@@ -5,7 +5,6 @@ import Button from './Button';
 import video1 from '../assets/video-1.mp4';
 import video2 from '../assets/video-2.mp4';
 import video3 from '../assets/video-3.mp4';
-import video1Compressed from '../assets/video-1-compressed.mp4';
 
 const Hero = ({ onExploreProjects, onContactUs }) => {
   const containerRef = useRef(null);
@@ -150,7 +149,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
               muted
               loop
               playsInline
-              src={video1Compressed}
+              src="/video-1-comp-again.mp4"
               className="absolute inset-0 w-full h-full object-cover"
             />
           ) : (
