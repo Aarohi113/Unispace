@@ -4,87 +4,95 @@ import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
 import CallToAction from './CallToAction';
 
 const AllProjects = ({ onOpenConsultation }) => {
-  // Project list containing 10 premium projects
+  // Project list containing 11 premium projects
   const projects = [
     {
-      title: "Google Executive Hub",
-      category: "Luxury Design & Build",
-      location: "Bengaluru, India",
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-      description: "A state-of-the-art office spaces designed to foster innovation, collaboration, and high-performance engineering cultures."
-    },
-    {
-      title: "Microsoft R&D Centre",
-      category: "Acoustic Corporate Fit-Out",
-      location: "Hyderabad, India",
-      year: "2026",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
-      description: "Complex acoustic engineering and spatial designs engineered for Microsoft's elite R&D developers."
-    },
-    {
-      title: "Samsung Design Studio",
-      category: "Creative Workspace Layout",
+      title: "Gail Pipeline Project",
+      category: "Utility & MEP Infrastructure",
       location: "Noida, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
-      description: "An elegant, minimal workspace blending premium glass, wood textures, and bespoke lighting fixtures."
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+      description: "Turnkey pipeline design-build planning, MEP, and corporate fit-out works managing utility and administrative hubs."
     },
     {
-      title: "HCL Innovation Lab",
-      category: "High-Tech Corporate HQ",
-      location: "Noida, India",
-      year: "2024",
-      image: "/hcl-reception.jpg",
-      description: "A design that integrates smart-building technologies with ergonomic and collaborative breakout spaces."
-    },
-    {
-      title: "Adani Corporate Headquarters",
-      category: "Full-Scale Civil Fit-Out",
-      location: "Ahmedabad, India",
-      year: "2025",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-      description: "A monumental design-build commercial infrastructure showcasing leadership, resilience, and industrial trust."
-    },
-    {
-      title: "Genpact Operational Base",
-      category: "Modular Team Space",
+      title: "Interior Fit Out Work - Genpact (Phase 1)",
+      category: "Modular Turnkey Fit-Out",
       location: "Gurugram, India",
       year: "2024",
       image: "/genpact-interior.jpg",
       description: "High-density modular seating architectures optimizing floor layouts while providing premium comfort."
     },
     {
-      title: "Vanguard Corporate Hub",
-      category: "Acoustic Meeting Rooms",
+      title: "Interior Fit Out Work - Genpact (Phase 2)",
+      category: "Executive Workspace Design",
+      location: "Gurugram, India",
+      year: "2025",
+      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+      description: "Collaborative workspace lounge zones and executive boardrooms featuring premium custom acoustics."
+    },
+    {
+      title: "Microsoft Noida / Gurugram",
+      category: "High-Tech Corporate Hub",
+      location: "Noida & Gurugram, India",
+      year: "2026",
+      image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+      description: "Advanced software R&D workspace design-build featuring premium acoustic pods and flexible workstation systems."
+    },
+    {
+      title: "Incuspaze Project",
+      category: "Co-Working Managed Workspace",
+      location: "Noida, India",
+      year: "2025",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      description: "A vibrant managed co-working setup focusing on smart meeting pods, shared collaboration desks, and modern café zones."
+    },
+    {
+      title: "Tata Project",
+      category: "Premium Corporate Offices",
       location: "Mumbai, India",
       year: "2025",
       image: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1200&q=80",
-      description: "Double-glazed acoustic partitions and premium finishes designed for confidential boardrooms."
+      description: "High-end luxury corporate corporate offices with custom marble lobby finishes and executive boardrooms."
     },
     {
-      title: "Horizon executive Suite",
-      category: "Premium Executive Lounge",
-      location: "New Delhi, India",
-      year: "2026",
+      title: "IOCL Adani Gas Pvt Ltd., Bulandshehar",
+      category: "Administrative Civil Execution",
+      location: "Bulandshahr, India",
+      year: "2024",
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+      description: "Strategic joint venture administrative facility construction and high-grade functional interior execution."
+    },
+    {
+      title: "GL Golden (Sub Contract basis)",
+      category: "Civil Layout Structure",
+      location: "Bengaluru, India",
+      year: "2025",
       image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-      description: "A luxury lounge space incorporating glass, dark marble accents, and custom plush seating furniture."
+      description: "Premium subcontracted civil layout structural fit-outs, executing ceiling grids and partition installations."
     },
     {
-      title: "Gail Corporate Tower",
-      category: "Sustainable Design Build",
-      location: "Greater Noida, India",
+      title: "TV Today Studio",
+      category: "Acoustic Broadcast Studio",
+      location: "Noida, India",
       year: "2025",
       image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80",
-      description: "An eco-friendly interior layout utilising natural daylighting, energy-saving fixtures, and bio-philic elements."
+      description: "Acoustic broadcast studio fit-out, engineering soundproof production bays and media presentation environments."
     },
     {
-      title: "Samsung Digital Plaza",
-      category: "Bespoke Experiential Lounge",
-      location: "Gurugram, India",
-      year: "2026",
+      title: "Vidyagyan School (Interior and Faculty Upgradation)",
+      category: "Institutional Upgrades",
+      location: "Bulandshahr, India",
+      year: "2024",
       image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-      description: "A premium customer-experience design space emphasizing modern tech, minimal surfaces, and warm hospitality design."
+      description: "Institutional interior upgrade program featuring modern smart classrooms, teacher lounges, and upgraded academic wings."
+    },
+    {
+      title: "Angelique International",
+      category: "Global Headquarters Fit-Out",
+      location: "Noida, India",
+      year: "2026",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+      description: "Global headquarters fit-out highlighting corporate administration wings, international conference suites, and rich wood paneling."
     }
   ];
 
