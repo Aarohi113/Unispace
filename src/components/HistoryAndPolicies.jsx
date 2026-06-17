@@ -32,7 +32,7 @@ const items = [
     num: "03",
     title: "ANTI-FORCED & CHILD LABOR POLICY",
     desc: "We strictly prohibit forced and child labor across all our projects and offices. All employees and subcontractors must comply with applicable laws and uphold ethical work practices. We are committed to maintaining a workplace based on respect, dignity, and legal compliance.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+    image: "/child-labour.png"
   },
   {
     type: "Policy",

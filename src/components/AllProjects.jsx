@@ -11,7 +11,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Utility & MEP Infrastructure",
       location: "Noida, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+      image: "/gail-workspace.png",
       description: "Turnkey pipeline design-build planning, MEP, and corporate fit-out works managing utility and administrative hubs."
     },
     {
@@ -35,7 +35,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "High-Tech Corporate Hub",
       location: "Noida & Gurugram, India",
       year: "2026",
-      image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+      image: "/microsoft-office.jpg",
       description: "Advanced software R&D workspace design-build featuring premium acoustic pods and flexible workstation systems."
     },
     {
@@ -51,7 +51,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Premium Corporate Offices",
       location: "Mumbai, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=1200&q=80",
+      image: "/tata-reception.jpg",
       description: "High-end luxury corporate corporate offices with custom marble lobby finishes and executive boardrooms."
     },
     {
