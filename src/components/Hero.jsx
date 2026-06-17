@@ -19,6 +19,36 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   const [loadVideo2, setLoadVideo2] = useState(false);
   const [loadVideo3, setLoadVideo3] = useState(false);
 
+  // Mobile optimization states and refs
+  const [isMobile, setIsMobile] = useState(false);
+  const mobileVideoRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleMobileVideoEnded = () => {
+    if (activeVideo === 1) {
+      setActiveVideo(2);
+    } else if (activeVideo === 2) {
+      setActiveVideo(3);
+    } else {
+      setActiveVideo(1);
+    }
+  };
+
+  useEffect(() => {
+    if (isMobile && mobileVideoRef.current) {
+      mobileVideoRef.current.load();
+      mobileVideoRef.current.play().catch(() => {});
+    }
+  }, [activeVideo, isMobile]);
+
   // Handle lazy-loading via useEffect to guarantee the browser initiates the fetch
   useEffect(() => {
     if (loadVideo2 && videoRef2.current) {
@@ -128,42 +158,56 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
           }}
           className="absolute top-0 md:top-0 h-[100dvh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
-          {/* Video 1 (video-1.mp4 local asset) */}
-          <video
-            ref={videoRef1}
-            autoPlay
-            muted
-            preload="auto"
-            playsInline
-            src={video1}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-            style={{ opacity: activeVideo === 1 ? 1 : 0, zIndex: activeVideo === 1 ? 1 : 0 }}
-            onEnded={handleEnded1}
-            onPlay={() => setLoadVideo2(true)}
-          />
-          {/* Video 2 (video-2.mp4 local asset) */}
-          <video
-            ref={videoRef2}
-            muted
-            preload={loadVideo2 ? "auto" : "none"}
-            playsInline
-            src={loadVideo2 ? video2 : undefined}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-            style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
-            onEnded={handleEnded2}
-            onPlay={() => setLoadVideo3(true)}
-          />
-          {/* Video 3 (video-3.mp4 local asset) */}
-          <video
-            ref={videoRef3}
-            muted
-            preload={loadVideo3 ? "auto" : "none"}
-            playsInline
-            src={loadVideo3 ? video3 : undefined}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-            style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
-            onEnded={handleEnded3}
-          />
+          {isMobile ? (
+            <video
+              ref={mobileVideoRef}
+              autoPlay
+              muted
+              playsInline
+              src={activeVideo === 1 ? video1 : activeVideo === 2 ? video2 : video3}
+              className="absolute inset-0 w-full h-full object-cover"
+              onEnded={handleMobileVideoEnded}
+            />
+          ) : (
+            <>
+              {/* Video 1 (video-1.mp4 local asset) */}
+              <video
+                ref={videoRef1}
+                autoPlay
+                muted
+                preload="auto"
+                playsInline
+                src={video1}
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                style={{ opacity: activeVideo === 1 ? 1 : 0, zIndex: activeVideo === 1 ? 1 : 0 }}
+                onEnded={handleEnded1}
+                onPlay={() => setLoadVideo2(true)}
+              />
+              {/* Video 2 (video-2.mp4 local asset) */}
+              <video
+                ref={videoRef2}
+                muted
+                preload={loadVideo2 ? "auto" : "none"}
+                playsInline
+                src={loadVideo2 ? video2 : undefined}
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
+                onEnded={handleEnded2}
+                onPlay={() => setLoadVideo3(true)}
+              />
+              {/* Video 3 (video-3.mp4 local asset) */}
+              <video
+                ref={videoRef3}
+                muted
+                preload={loadVideo3 ? "auto" : "none"}
+                playsInline
+                src={loadVideo3 ? video3 : undefined}
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
+                onEnded={handleEnded3}
+              />
+            </>
+          )}
  
           {/* Blueprint gridlines inside video container */}
           <div className="absolute inset-0 z-10 pointer-events-none opacity-5 flex justify-between px-10 md:px-24">
