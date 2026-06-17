@@ -23,15 +23,15 @@ const InteractiveProjects = () => {
   const handleMouseMove = (e) => {
     // Disable on mobile/touch viewports
     if (!isDesktop) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    
+
     // Normalize coordinates around center (0,0)
     const mouseX = e.clientX - rect.left - width / 2;
     const mouseY = e.clientY - rect.top - height / 2;
-    
+
     // Scale rotation to max +/- 10 degrees
     x.set((mouseX / (width / 2)) * 10);
     y.set((mouseY / (height / 2)) * -10);
@@ -46,7 +46,7 @@ const InteractiveProjects = () => {
   return (
     <div id="projects" className="unispace-projects-hover-section border-t border-black/5">
       <div className="projects-viewport-wrapper">
-        
+
         <div className="projects-section-header">
           <span className="proj-tag text-brand-accent tracking-[0.25em] font-sans font-semibold text-xs mb-3 block">
             Future Perfect
@@ -60,7 +60,7 @@ const InteractiveProjects = () => {
         </div>
 
         <div className="projects-hover-orbit-container">
-          <motion.div 
+          <motion.div
             className="projects-pentagon-orbit group/orbit"
             style={isDesktop ? { rotateX, rotateY, transformStyle: "preserve-3d" } : {}}
             onMouseMove={handleMouseMove}
@@ -74,15 +74,15 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 1: HCL (Central Master Card) */}
-            <div 
-              className="project-card central-master-card cursor-pointer" 
+            <div
+              className="project-card central-master-card cursor-pointer"
               style={{ '--card-index': 1, cursor: 'pointer' }}
               onClick={() => window.location.hash = '#projects-all'}
             >
-              <img 
-                src="/hcl-reception.jpg" 
-                alt="HCL Workspace" 
-                loading="eager" 
+              <img
+                src="/hcl.jpeg"
+                alt="HCL Workspace"
+                loading="eager"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
@@ -98,15 +98,15 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 2: Microsoft Hub (Top Left Satellite Card) */}
-            <div 
-              className="project-card exploded-satellite-card pos-top-left cursor-pointer" 
+            <div
+              className="project-card exploded-satellite-card pos-top-left cursor-pointer"
               style={{ '--card-index': 2, cursor: 'pointer' }}
               onClick={() => window.location.hash = '#projects-all'}
             >
-              <img 
-                src="/microsoft-office.jpg" 
-                alt="Microsoft Corporate Hub" 
-                loading="lazy" 
+              <img
+                src="/microsoft.jpeg"
+                alt="Microsoft Corporate Hub"
+                loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
@@ -122,15 +122,15 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 3: Genpact - Interior (Top Right Satellite Card) */}
-            <div 
-              className="project-card exploded-satellite-card pos-top-right cursor-pointer" 
+            <div
+              className="project-card exploded-satellite-card pos-top-right cursor-pointer"
               style={{ '--card-index': 3, cursor: 'pointer' }}
               onClick={() => window.location.hash = '#projects-all'}
             >
-              <img 
-                src="/genpact-interior.jpg" 
-                alt="Genpact - Interior" 
-                loading="lazy" 
+              <img
+                src="/genpact-interior.jpg"
+                alt="Genpact - Interior"
+                loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
@@ -146,15 +146,15 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 4: TATA Project (Bottom Left Satellite Card) */}
-            <div 
-              className="project-card exploded-satellite-card pos-bottom-left cursor-pointer" 
+            <div
+              className="project-card exploded-satellite-card pos-bottom-left cursor-pointer"
               style={{ '--card-index': 4, cursor: 'pointer' }}
               onClick={() => window.location.hash = '#projects-all'}
             >
-              <img 
-                src="/tata-reception.jpg" 
-                alt="TATA Project" 
-                loading="lazy" 
+              <img
+                src="/tcs.jpeg"
+                alt="TATA Project"
+                loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
@@ -170,15 +170,15 @@ const InteractiveProjects = () => {
             </div>
 
             {/* CARD 5: Gail Project (Bottom Right Satellite Card) */}
-            <div 
-              className="project-card exploded-satellite-card pos-bottom-right cursor-pointer" 
+            <div
+              className="project-card exploded-satellite-card pos-bottom-right cursor-pointer"
               style={{ '--card-index': 5, cursor: 'pointer' }}
               onClick={() => window.location.hash = '#projects-all'}
             >
-              <img 
-                src="/gail-workspace.png" 
-                alt="Gail Project" 
-                loading="lazy" 
+              <img
+                src="/gail-workspace.png"
+                alt="Gail Project"
+                loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
@@ -198,8 +198,8 @@ const InteractiveProjects = () => {
 
         {/* View All Projects Button */}
         <div className="flex justify-center mt-12 pb-8">
-          <a 
-            href="#projects-all" 
+          <a
+            href="#projects-all"
             className="inline-flex items-center gap-2 px-8 py-3.5 border border-brand-accent/40 text-brand-accent hover:bg-brand-accent hover:text-white rounded-full font-sans text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5"
           >
             View All Projects
