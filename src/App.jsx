@@ -16,6 +16,7 @@ import Preloader from './components/Preloader';
 import AboutUs from './components/AboutUs';
 import AllProjects from './components/AllProjects';
 import OurServices from './components/OurServices';
+import ContactUs from './components/ContactUs';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +44,9 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (window.location.hash === '#services') {
         setCurrentPage('services');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (window.location.hash === '#contact-us') {
+        setCurrentPage('contact');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
@@ -176,6 +180,8 @@ function App() {
         <AllProjects onOpenConsultation={() => setIsModalOpen(true)} />
       ) : currentPage === 'services' ? (
         <OurServices onOpenConsultation={() => setIsModalOpen(true)} />
+      ) : currentPage === 'contact' ? (
+        <ContactUs />
       ) : (
         <>
           {/* Main Full-Screen Hero */}
