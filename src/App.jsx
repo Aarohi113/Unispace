@@ -57,6 +57,10 @@ function App() {
     if (currentPage === 'home' && window.location.hash) {
       const timer = setTimeout(() => {
         const id = window.location.hash.substring(1);
+        if (id === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +68,7 @@ function App() {
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [currentPage]);
+  }, [currentPage, window.location.hash]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
