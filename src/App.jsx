@@ -95,9 +95,9 @@ function App() {
     e.preventDefault();
     
     // Paste your Google Web App URL here
-    const webhookUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+    const webhookUrl = "https://script.google.com/macros/s/AKfycbxvZ8WA77Okh9p0iAnRc-oHdcXtEU6-1r_sYgPXqUOozX82W_crU5q4EyAPpR8E71FuZg/exec";
     
-    if (webhookUrl && webhookUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+    if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
           method: "POST",
@@ -140,9 +140,9 @@ function App() {
     };
 
     // Paste your Google Web App URL here
-    const webhookUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+    const webhookUrl = "https://script.google.com/macros/s/AKfycbxvZ8WA77Okh9p0iAnRc-oHdcXtEU6-1r_sYgPXqUOozX82W_crU5q4EyAPpR8E71FuZg/exec";
     
-    if (webhookUrl && webhookUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+    if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
           method: "POST",
