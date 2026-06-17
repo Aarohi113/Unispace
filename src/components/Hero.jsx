@@ -33,7 +33,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   useEffect(() => {
     if (isMobile) {
       const timer = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % 3);
+        setCurrentSlide((prev) => (prev + 1) % 4);
       }, 6000);
       return () => clearInterval(timer);
     }
@@ -152,58 +152,72 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
         >
           {isMobile ? (
             <div className="absolute inset-0 w-full h-full overflow-hidden bg-primary-dark">
-              {/* Slide 1: Round Pan (U-shape) */}
+              {/* Slide 1: Right to Left Pan */}
               <motion.img
                 src="/slideshow-1.jpg"
                 animate={{
                   opacity: currentSlide === 0 ? 1 : 0,
-                  x: currentSlide === 0 ? ["-6%", "-2%", "6%"] : "-6%",
-                  y: currentSlide === 0 ? ["-6%", "4%", "-6%"] : "-6%",
+                  x: currentSlide === 0 ? ["6%", "-6%"] : "6%",
+                  y: "0%",
                   scale: 1.25
                 }}
                 transition={{
                   opacity: { duration: 1.2, ease: "easeInOut" },
-                  x: { duration: 6, ease: "easeInOut" },
-                  y: { duration: 6, ease: "easeInOut" }
+                  x: { duration: 6, ease: "easeInOut" }
                 }}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 style={{ zIndex: currentSlide === 0 ? 2 : 1 }}
               />
 
-              {/* Slide 2: Straight Pan (Linear left to right) */}
+              {/* Slide 2: Right to Left Pan */}
               <motion.img
                 src="/slideshow-2.jpg"
                 animate={{
                   opacity: currentSlide === 1 ? 1 : 0,
-                  x: currentSlide === 1 ? ["-8%", "8%"] : "-8%",
-                  y: currentSlide === 1 ? ["0%", "0%"] : "0%",
+                  x: currentSlide === 1 ? ["8%", "-8%"] : "8%",
+                  y: "0%",
                   scale: 1.25
                 }}
                 transition={{
                   opacity: { duration: 1.2, ease: "easeInOut" },
-                  x: { duration: 6, ease: "easeInOut" },
-                  y: { duration: 6, ease: "easeInOut" }
+                  x: { duration: 6, ease: "easeInOut" }
                 }}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 style={{ zIndex: currentSlide === 1 ? 2 : 1 }}
               />
 
-              {/* Slide 3: Round Pan (Arch-shape) */}
+              {/* Slide 3: Right to Left Pan */}
               <motion.img
                 src="/slideshow-3.jpg"
                 animate={{
                   opacity: currentSlide === 2 ? 1 : 0,
-                  x: currentSlide === 2 ? ["-6%", "0%", "6%"] : "-6%",
-                  y: currentSlide === 2 ? ["6%", "-4%", "6%"] : "6%",
+                  x: currentSlide === 2 ? ["6%", "-6%"] : "6%",
+                  y: "0%",
                   scale: 1.25
                 }}
                 transition={{
                   opacity: { duration: 1.2, ease: "easeInOut" },
-                  x: { duration: 6, ease: "easeInOut" },
-                  y: { duration: 6, ease: "easeInOut" }
+                  x: { duration: 6, ease: "easeInOut" }
                 }}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 style={{ zIndex: currentSlide === 2 ? 2 : 1 }}
+              />
+
+              {/* Slide 4: Right to Left Pan */}
+              <motion.img
+                src="/slideshow-4.jpg"
+                animate={{
+                  opacity: currentSlide === 3 ? 1 : 0,
+                  x: currentSlide === 3 ? ["7%", "-7%"] : "7%",
+                  y: "0%",
+                  scale: 1.25
+                }}
+                transition={{
+                  opacity: { duration: 1.2, ease: "easeInOut" },
+                  x: { duration: 6, ease: "easeInOut" }
+                }}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ zIndex: currentSlide === 3 ? 2 : 1 }}
               />
             </div>
           ) : (
