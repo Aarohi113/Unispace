@@ -101,7 +101,7 @@ const servicesList = [
     tag: "MEP Engineering",
     title: "MEP",
     desc: "Integrated Mechanical, Electrical, and Plumbing engineering services, executing complex air conditioning ducting, corporate electrical grids, and automated fire controls.",
-    image: "",
+    image: "/major-demolition.jpg",
     icon: Cpu
   },
   {
@@ -109,7 +109,7 @@ const servicesList = [
     tag: "Metal Fabrication",
     title: "Major Fabrication",
     desc: "Heavy structural steel fabrication, manufacturing secure steel structural trusses, structural columns, perimeter railings, and customized access stairs.",
-    image: "",
+    image: "/major-fabrication.jpg",
     icon: Wrench
   },
   {
