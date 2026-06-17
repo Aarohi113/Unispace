@@ -147,8 +147,8 @@ const OurServices = ({ onOpenConsultation }) => {
     restDelta: 0.001
   });
 
-  // Calculate dot Y-position down the timeline (0% to 100%)
-  const dotY = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
+  // Calculate dot top position down the timeline (80px to calc(100% - 80px))
+  const dotY = useTransform(smoothProgress, [0, 1], ["80px", "calc(100% - 80px)"]);
 
   return (
     <div className="relative min-h-screen bg-primary-bg">
@@ -178,12 +178,12 @@ const OurServices = ({ onOpenConsultation }) => {
       >
         
         {/* Timeline Center Line */}
-        <div className="absolute left-1/2 top-10 bottom-10 w-[2px] bg-luxury-highlight/15 -translate-x-1/2 z-0 hidden md:block" />
+        <div className="absolute left-1/2 top-[80px] bottom-[80px] w-[2px] bg-luxury-highlight/15 -translate-x-1/2 z-0 hidden md:block" />
 
         {/* Scroll Dot (follows scroll down) */}
         <motion.div 
-          style={{ y: dotY }}
-          className="absolute left-1/2 top-10 w-4 h-4 rounded-full bg-brand-accent border-4 border-white shadow-[0_0_15px_rgba(225,29,72,0.6)] -translate-x-1/2 z-20 hidden md:block"
+          style={{ top: dotY }}
+          className="absolute left-1/2 w-4 h-4 rounded-full bg-brand-accent border-4 border-white shadow-[0_0_15px_rgba(225,29,72,0.6)] -translate-x-1/2 z-20 hidden md:block -mt-2"
         />
 
         {/* Alternate Services Layout Grid */}
@@ -195,9 +195,6 @@ const OurServices = ({ onOpenConsultation }) => {
                 key={service.num}
                 className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center relative"
               >
-                
-                {/* Horizontal connection line for visual link to center line */}
-                <div className={`absolute top-1/2 w-[calc(50%-16px)] h-[1px] bg-luxury-highlight/25 hidden md:block ${isEven ? 'left-1/2' : 'right-1/2'}`} />
 
                 {/* Left Side: Content or Image */}
                 <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-1 text-right' : 'order-1 md:order-2 text-left'}`}>
