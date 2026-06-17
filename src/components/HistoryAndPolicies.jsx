@@ -39,7 +39,7 @@ const items = [
     num: "04",
     title: "CODE OF CONDUCT & CONFLICT OF INTEREST",
     desc: "We are committed to maintaining high standards of integrity, professionalism, and ethical conduct in all our operations. All employees must act with honesty and disclose any potential conflicts of interest. We promote transparency, accountability, and fair dealings to ensure a trustworthy work environment.",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80"
+    image: "/code-of-conduct.png"
   },
   {
     type: "Policy",
