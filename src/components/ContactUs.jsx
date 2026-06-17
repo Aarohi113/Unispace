@@ -21,7 +21,7 @@ const ContactUs = () => {
     e.preventDefault();
     
     // Read Google Web App URL from environment variables with hardcoded fallback
-    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby2H0VQfhbgtEqSdJFqGr1k7TXi0LnOL6naeWPvM0EQxe45Cm9JXtBAMc0j3mKPHV1G4A/exec";
+    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby_Z2tMmxzp7IBNjKpOQzaNyGtj44OHwgcXBSOt7I_6BHjr30d2GREianABeZsfl3cI8w/exec";
     
     if (webhookUrl) {
       try {
