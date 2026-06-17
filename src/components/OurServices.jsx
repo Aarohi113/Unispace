@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { 
-  Building2, Paintbrush, Laptop, Server, Layers, HardDrive, 
-  Droplets, CloudRain, Milestone, Hammer, Warehouse, Cpu, 
-  Wrench, HardHat, Trees, Shield, Leaf, Home 
+import {
+  Building2, Paintbrush, Laptop, Server, Layers, HardDrive,
+  Droplets, CloudRain, Milestone, Hammer, Warehouse, Cpu,
+  Wrench, HardHat, Trees, Shield, Leaf, Home
 } from 'lucide-react';
 import CallToAction from './CallToAction';
 
@@ -45,7 +45,7 @@ const servicesList = [
     tag: "Heavy Utilities",
     title: "Oil, Gas and Petrochemical pipe line and Civil works",
     desc: "Expert heavy utility civil execution for industrial pipelines, handling excavation, deep trenching, structural concrete pads, and robust protective encasements.",
-    image: "/pipeline-civil-works.jpg",
+    image: "",
     icon: Layers
   },
   {
@@ -61,7 +61,7 @@ const servicesList = [
     tag: "Piping Networks",
     title: "Water / Piping Distribution and Sanitation Work",
     desc: "Engineering reliable main water lines, distribution manifolds, and complete sanitation networks for corporate towers, campuses, and industrial sites.",
-    image: "/water-piping-distribution.jpg",
+    image: "/pipeline-civil-works.jpg",
     icon: Droplets
   },
   {
@@ -69,7 +69,7 @@ const servicesList = [
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "/borewell-rainwater-harvesting.jpg",
+    image: "/",
     icon: CloudRain
   },
   {
@@ -77,7 +77,7 @@ const servicesList = [
     tag: "Transportation Link",
     title: "RCC Road",
     desc: "Heavy-duty reinforced cement concrete roadways constructed for industrial estates, commercial complex driveways, and long-term structural durability.",
-    image: "/rcc-road.jpg",
+    image: "/water-piping-distribution.jpg",
     icon: Milestone
   },
   {
@@ -85,7 +85,7 @@ const servicesList = [
     tag: "Demolition & Site Prep",
     title: "Major Demolition Work",
     desc: "Controlled and safe demolition of commercial building blocks, structural concrete walls, and old facilities using advanced machinery and strict safety regulations.",
-    image: "/major-demolition.jpg",
+    image: "/borewell-rainwater-harvesting.jpg",
     icon: Hammer
   },
   {
@@ -93,7 +93,7 @@ const servicesList = [
     tag: "Prefabricated Structures",
     title: "Modern Pre-Fab buildings and Industrial Shed",
     desc: "High-speed assembly of steel pre-fabricated structures, modular storage sheds, and industrial warehouses built with high structural wind resistance.",
-    image: "/prefab-buildings.jpg",
+    image: "/rcc-road.jpg",
     icon: Warehouse
   },
   {
@@ -101,7 +101,7 @@ const servicesList = [
     tag: "MEP Engineering",
     title: "MEP",
     desc: "Integrated Mechanical, Electrical, and Plumbing engineering services, executing complex air conditioning ducting, corporate electrical grids, and automated fire controls.",
-    image: "/mep-engineering.jpg",
+    image: "",
     icon: Cpu
   },
   {
@@ -109,7 +109,7 @@ const servicesList = [
     tag: "Metal Fabrication",
     title: "Major Fabrication",
     desc: "Heavy structural steel fabrication, manufacturing secure steel structural trusses, structural columns, perimeter railings, and customized access stairs.",
-    image: "/major-fabrication.jpg",
+    image: "",
     icon: Wrench
   },
   {
@@ -117,7 +117,7 @@ const servicesList = [
     tag: "Civil Infrastructure",
     title: "Miscellaneous Civil Work",
     desc: "Essential corporate civil solutions including custom building plastering, masonry partitions, wall tiling, concrete foundation pads, and structural repair works.",
-    image: "/misc-civil-works.jpg",
+    image: "/prefab-buildings.jpg",
     icon: HardHat
   },
   {
@@ -133,7 +133,7 @@ const servicesList = [
     tag: "Sound & Thermal Shield",
     title: "Sun Controls, Heat and Sound Proofing",
     desc: "High-performance thermal and acoustic insulation fit-outs, installing heat-reflective window films, soundproofing boards, and custom wall padding.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    image: "/major-fabrication.jpg",
     icon: Shield
   },
   {
@@ -141,7 +141,7 @@ const servicesList = [
     tag: "Environmental Systems",
     title: "Treatment Plants and Environments Protections",
     desc: "Turnkey waste and water treatment facilities, engineering water recycling plants, environmental filter systems, and sustainable discharge systems.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    image: "/misc-civil-works.jpg",
     icon: Leaf
   },
   {
@@ -194,16 +194,16 @@ const OurServices = ({ onOpenConsultation }) => {
       </section>
 
       {/* Grid Pattern Timeline container */}
-      <div 
+      <div
         ref={timelineRef}
         className="relative max-w-7xl mx-auto px-6 md:px-12 py-20 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] overflow-hidden"
       >
-        
+
         {/* Timeline Center Line */}
         <div className="absolute left-1/2 top-[80px] bottom-[80px] w-[2px] bg-luxury-highlight/15 -translate-x-1/2 z-0 hidden md:block" />
 
         {/* Scroll Dot (follows scroll down) */}
-        <motion.div 
+        <motion.div
           style={{ top: dotY }}
           className="absolute left-1/2 w-4 h-4 rounded-full bg-brand-accent border-4 border-white shadow-[0_0_15px_rgba(225,29,72,0.6)] -translate-x-1/2 z-20 hidden md:block -mt-2"
         />
@@ -214,11 +214,11 @@ const OurServices = ({ onOpenConsultation }) => {
             const isEven = index % 2 === 0;
             const IconComponent = service.icon;
             return (
-              <div 
+              <div
                 key={service.num}
                 className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center relative"
               >
-                
+
                 {/* Left Side: Content (when isEven is true) or Image (when isEven is false) */}
                 <div className="col-span-1 md:col-span-5">
                   {isEven ? (
@@ -253,8 +253,8 @@ const OurServices = ({ onOpenConsultation }) => {
                       className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-white group"
                     >
                       <div className="aspect-[16/10] overflow-hidden relative">
-                        <img 
-                          src={service.image} 
+                        <img
+                          src={service.image}
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                           loading="lazy"
@@ -303,8 +303,8 @@ const OurServices = ({ onOpenConsultation }) => {
                       className="relative rounded-2xl overflow-hidden shadow-lg border border-black/5 bg-white group"
                     >
                       <div className="aspect-[16/10] overflow-hidden relative">
-                        <img 
-                          src={service.image} 
+                        <img
+                          src={service.image}
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                           loading="lazy"
