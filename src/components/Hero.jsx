@@ -15,8 +15,27 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
 
+  // Lazy loading states for sequential video preloading
+  const [loadVideo2, setLoadVideo2] = useState(false);
+  const [loadVideo3, setLoadVideo3] = useState(false);
+
+  // Handle lazy-loading via useEffect to guarantee the browser initiates the fetch
+  useEffect(() => {
+    if (loadVideo2 && videoRef2.current) {
+      videoRef2.current.load();
+    }
+  }, [loadVideo2]);
+
+  useEffect(() => {
+    if (loadVideo3 && videoRef3.current) {
+      videoRef3.current.load();
+    }
+  }, [loadVideo3]);
+
   // Loop transition functions that cross-fade between the three videos
   const handleEnded1 = () => {
+    // Ensure video 2 is loading/loaded
+    setLoadVideo2(true);
     setActiveVideo(2);
     if (videoRef2.current) {
       videoRef2.current.currentTime = 0;
@@ -29,6 +48,8 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
   };
 
   const handleEnded2 = () => {
+    // Ensure video 3 is loading/loaded
+    setLoadVideo3(true);
     setActiveVideo(3);
     if (videoRef3.current) {
       videoRef3.current.currentTime = 0;
@@ -57,6 +78,11 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
     if (videoRef1.current) {
       videoRef1.current.play().catch(() => { });
     }
+    // Backup trigger: load video 2 after 2.5 seconds regardless of autoplay state
+    const timer = setTimeout(() => {
+      setLoadVideo2(true);
+    }, 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -113,25 +139,27 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 1 ? 1 : 0, zIndex: activeVideo === 1 ? 1 : 0 }}
             onEnded={handleEnded1}
+            onPlay={() => setLoadVideo2(true)}
           />
           {/* Video 2 (video-2.mp4 local asset) */}
           <video
             ref={videoRef2}
             muted
-            preload="auto"
+            preload={loadVideo2 ? "auto" : "none"}
             playsInline
-            src={video2}
+            src={loadVideo2 ? video2 : undefined}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
             onEnded={handleEnded2}
+            onPlay={() => setLoadVideo3(true)}
           />
           {/* Video 3 (video-3.mp4 local asset) */}
           <video
             ref={videoRef3}
             muted
-            preload="auto"
+            preload={loadVideo3 ? "auto" : "none"}
             playsInline
-            src={video3}
+            src={loadVideo3 ? video3 : undefined}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
             style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
             onEnded={handleEnded3}
