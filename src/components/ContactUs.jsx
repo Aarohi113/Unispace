@@ -20,8 +20,8 @@ const ContactUs = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
-    // Paste your Google Web App URL here
-    const webhookUrl = "https://script.google.com/macros/s/AKfycby2H0VQfhbgtEqSdJFqGr1k7TXi0LnOL6naeWPvM0EQxe45Cm9JXtBAMc0j3mKPHV1G4A/exec";
+    // Read Google Web App URL from environment variables
+    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
     
     if (webhookUrl) {
       try {
