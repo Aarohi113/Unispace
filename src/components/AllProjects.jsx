@@ -43,7 +43,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Co-Working Managed Workspace",
       location: "Noida, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      image: "/incuspaze-managed.png",
       description: "A vibrant managed co-working setup focusing on smart meeting pods, shared collaboration desks, and modern café zones."
     },
     {
@@ -59,7 +59,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Administrative Civil Execution",
       location: "Bulandshahr, India",
       year: "2024",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+      image: "/iocl-adani-gas.png",
       description: "Strategic joint venture administrative facility construction and high-grade functional interior execution."
     },
     {
@@ -67,7 +67,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Civil Layout Structure",
       location: "Bengaluru, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+      image: "/gl-golden.png",
       description: "Premium subcontracted civil layout structural fit-outs, executing ceiling grids and partition installations."
     },
     {
@@ -75,7 +75,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Acoustic Broadcast Studio",
       location: "Noida, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=1200&q=80",
+      image: "/tv-today-studio.jpg",
       description: "Acoustic broadcast studio fit-out, engineering soundproof production bays and media presentation environments."
     },
     {
@@ -83,7 +83,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Institutional Upgrades",
       location: "Bulandshahr, India",
       year: "2024",
-      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+      image: "/vidyagyan-school.png",
       description: "Institutional interior upgrade program featuring modern smart classrooms, teacher lounges, and upgraded academic wings."
     },
     {
@@ -91,7 +91,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Global Headquarters Fit-Out",
       location: "Noida, India",
       year: "2026",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+      image: "/angelique-international.png",
       description: "Global headquarters fit-out highlighting corporate administration wings, international conference suites, and rich wood paneling."
     }
   ];
