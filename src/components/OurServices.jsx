@@ -13,7 +13,7 @@ const servicesList = [
     tag: "Commercial Development",
     title: "Commercial / Institution & others urban project",
     desc: "Turnkey urban developments, educational institutes, and retail complexes designed and executed to meet global institutional safety and performance standards.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    image: "/commercial-urban.jpg",
     icon: Building2
   },
   {
@@ -21,7 +21,7 @@ const servicesList = [
     tag: "Corporate Workspace",
     title: "Interior Work",
     desc: "Premium corporate fit-out works executing high-end partitions, false ceilings, custom joinery, and corporate boardroom designs with executive finishes.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    image: "/interior-design.jpg",
     icon: Paintbrush
   },
   {
@@ -29,7 +29,7 @@ const servicesList = [
     tag: "Modular Turnkey",
     title: "Creation of plug and play offices",
     desc: "Fully integrated, move-in ready workspace fit-outs pre-configured with structural furniture, power backup, IT networking, and secure utility connections.",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+    image: "/plug-play-office.jpg",
     icon: Laptop
   },
   {
@@ -37,7 +37,7 @@ const servicesList = [
     tag: "IT Infrastructure",
     title: "Data Center/ Server Room Creations",
     desc: "High-precision network server rooms and data centers designed with reliable hot/cold aisle cooling systems, backup power, and advanced safety protocols.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+    image: "/data-center-server.jpg",
     icon: Server
   },
   {
@@ -45,7 +45,7 @@ const servicesList = [
     tag: "Heavy Utilities",
     title: "Oil, Gas and Petrochemical pipe line and Civil works",
     desc: "Expert heavy utility civil execution for industrial pipelines, handling excavation, deep trenching, structural concrete pads, and robust protective encasements.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    image: "/pipeline-civil-works.jpg",
     icon: Layers
   },
   {
