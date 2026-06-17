@@ -83,7 +83,7 @@ const AboutUs = () => {
               variants={imageVariants('left')}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-primary-dark group cursor-pointer"
             >
               <img 
@@ -103,7 +103,7 @@ const AboutUs = () => {
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 flex flex-col items-start text-left"
             >
               <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-brand-accent uppercase block mb-3">
@@ -151,7 +151,7 @@ const AboutUs = () => {
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 lg:order-1 flex flex-col items-start text-left"
             >
               <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-brand-accent uppercase block mb-3">
@@ -190,7 +190,7 @@ const AboutUs = () => {
               variants={imageVariants('right')}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 lg:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-primary-dark group cursor-pointer"
             >
               <img 
@@ -232,7 +232,7 @@ const AboutUs = () => {
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="flex flex-col items-center text-center md:items-start md:text-left bg-primary-bg rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-primary-dark group">
@@ -255,7 +255,7 @@ const AboutUs = () => {
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               className="flex flex-col items-center text-center md:items-start md:text-left bg-primary-bg rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/3] rounded-xl overflow-hidden mb-6 bg-primary-dark group">
