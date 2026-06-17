@@ -396,34 +396,8 @@ function App() {
               </div>
             </div>
 
-            {/* Column 4: Contact Form */}
-            <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4 w-full">
-              <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
-                Quick Inquiry
-              </h4>
-              {footerSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center md:items-start text-center md:text-left py-4"
-                >
-                  <div className="flex items-center gap-2 text-secondary-accent font-semibold text-xs mb-2">
-                    <CheckCircle2 className="w-4 h-4 shrink-0" />
-                    <span>Message Sent Successfully</span>
-                  </div>
-                  <p className="text-[11px] text-text-charcoal/60 leading-relaxed max-w-[200px]">
-                    Thank you! Our representative will call you shortly.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleFooterSubmit} className="w-full flex flex-col gap-3">
 
-                  <Button variant="primary" type="submit" className="w-full py-3 text-xs uppercase tracking-widest font-semibold justify-center rounded-none mt-1">
-                    Send Message
-                  </Button>
-                </form>
-              )}
-            </div>
+
 
           </div>
 
