@@ -17,8 +17,27 @@ const ContactUs = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    
+    // Paste your Google Web App URL here
+    const webhookUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+    
+    if (webhookUrl && webhookUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+      } catch (error) {
+        console.error("Error submitting contact form:", error);
+      }
+    }
+
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

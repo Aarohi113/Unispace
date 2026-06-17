@@ -91,9 +91,27 @@ function App() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Simulate submission
+    
+    // Paste your Google Web App URL here
+    const webhookUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+    
+    if (webhookUrl && webhookUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+      } catch (error) {
+        console.error("Error submitting consultation form:", error);
+      }
+    }
+
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);
@@ -109,12 +127,40 @@ function App() {
     }, 2500);
   };
 
-  const handleFooterSubmit = (e) => {
+  const handleFooterSubmit = async (e) => {
     e.preventDefault();
-    // Simulate submission
+    
+    const formEl = e.target;
+    const footerData = {
+      name: formEl.elements.name.value,
+      phone: formEl.elements.phone.value,
+      email: formEl.elements.email.value,
+      subject: "Quick Footer Inquiry",
+      message: "Submitted from quick footer form."
+    };
+
+    // Paste your Google Web App URL here
+    const webhookUrl = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+    
+    if (webhookUrl && webhookUrl !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(footerData)
+        });
+      } catch (error) {
+        console.error("Error submitting footer inquiry form:", error);
+      }
+    }
+
     setFooterSubmitted(true);
     setTimeout(() => {
       setFooterSubmitted(false);
+      formEl.reset();
     }, 4000);
   };
 
