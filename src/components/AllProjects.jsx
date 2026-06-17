@@ -35,7 +35,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "High-Tech Corporate HQ",
       location: "Noida, India",
       year: "2024",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+      image: "/hcl-reception.jpg",
       description: "A design that integrates smart-building technologies with ergonomic and collaborative breakout spaces."
     },
     {
@@ -51,7 +51,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Modular Team Space",
       location: "Gurugram, India",
       year: "2024",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+      image: "/genpact-interior.jpg",
       description: "High-density modular seating architectures optimizing floor layouts while providing premium comfort."
     },
     {

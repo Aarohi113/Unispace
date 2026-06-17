@@ -76,7 +76,7 @@ const InteractiveProjects = () => {
             {/* CARD 1: HCL (Central Master Card) */}
             <div className="project-card central-master-card" style={{ '--card-index': 1 }}>
               <img 
-                src="https://unispacecontracts.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-104123.png" 
+                src="/hcl-reception.jpg" 
                 alt="HCL Workspace" 
                 loading="eager" 
                 decoding="async"
@@ -116,7 +116,7 @@ const InteractiveProjects = () => {
             {/* CARD 3: Genpact - Interior (Top Right Satellite Card) */}
             <div className="project-card exploded-satellite-card pos-top-right" style={{ '--card-index': 3 }}>
               <img 
-                src="https://unispacecontracts.com/wp-content/uploads/2026/06/Screenshot-2026-06-16-103424.png" 
+                src="/genpact-interior.jpg" 
                 alt="Genpact - Interior" 
                 loading="lazy" 
                 decoding="async"
