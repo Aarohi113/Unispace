@@ -220,7 +220,7 @@ const OurServices = ({ onOpenConsultation }) => {
               >
                 
                 {/* Left Side: Content (when isEven is true) or Image (when isEven is false) */}
-                <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-1' : 'order-1 md:order-2'}`}>
+                <div className="col-span-1 md:col-span-5">
                   {isEven ? (
                     <motion.div
                       initial={{ opacity: 0, x: -60 }}
@@ -270,7 +270,7 @@ const OurServices = ({ onOpenConsultation }) => {
                 <div className="hidden md:block col-span-2" />
 
                 {/* Right Side: Image (when isEven is true) or Content (when isEven is false) */}
-                <div className={`col-span-1 md:col-span-5 ${isEven ? 'order-2 md:order-2' : 'order-2 md:order-1'}`}>
+                <div className="col-span-1 md:col-span-5">
                   {!isEven ? (
                     <motion.div
                       initial={{ opacity: 0, x: 60 }}
