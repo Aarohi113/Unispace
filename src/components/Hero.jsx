@@ -5,6 +5,7 @@ import Button from './Button';
 import video1 from '../assets/video-1.mp4';
 import video2 from '../assets/video-2.mp4';
 import video3 from '../assets/video-3.mp4';
+import video1Compressed from '../assets/video-1-compressed.mp4';
 
 const Hero = ({ onExploreProjects, onContactUs }) => {
   const containerRef = useRef(null);
@@ -32,22 +33,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const handleMobileVideoEnded = () => {
-    if (activeVideo === 1) {
-      setActiveVideo(2);
-    } else if (activeVideo === 2) {
-      setActiveVideo(3);
-    } else {
-      setActiveVideo(1);
-    }
-  };
 
-  useEffect(() => {
-    if (isMobile && mobileVideoRef.current) {
-      mobileVideoRef.current.load();
-      mobileVideoRef.current.play().catch(() => {});
-    }
-  }, [activeVideo, isMobile]);
 
   // Handle lazy-loading via useEffect to guarantee the browser initiates the fetch
   useEffect(() => {
@@ -160,13 +146,12 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
         >
           {isMobile ? (
             <video
-              ref={mobileVideoRef}
               autoPlay
               muted
+              loop
               playsInline
-              src={activeVideo === 1 ? video1 : activeVideo === 2 ? video2 : video3}
+              src={video1Compressed}
               className="absolute inset-0 w-full h-full object-cover"
-              onEnded={handleMobileVideoEnded}
             />
           ) : (
             <>
