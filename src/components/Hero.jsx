@@ -2,9 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import Button from './Button';
-import video1 from '../assets/video-1.mp4';
-import video2 from '../assets/video-2.mp4';
-import video3 from '../assets/video-3.mp4';
+
 
 const Hero = ({ onExploreProjects, onContactUs }) => {
   const containerRef = useRef(null);
@@ -161,7 +159,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
                 muted
                 preload="auto"
                 playsInline
-                src={video1}
+                src="/video-1.mp4"
                 className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                 style={{ opacity: activeVideo === 1 ? 1 : 0, zIndex: activeVideo === 1 ? 1 : 0 }}
                 onEnded={handleEnded1}
@@ -173,7 +171,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
                 muted
                 preload={loadVideo2 ? "auto" : "none"}
                 playsInline
-                src={loadVideo2 ? video2 : undefined}
+                src={loadVideo2 ? "/video-2.mp4" : undefined}
                 className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                 style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
                 onEnded={handleEnded2}
@@ -185,7 +183,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
                 muted
                 preload={loadVideo3 ? "auto" : "none"}
                 playsInline
-                src={loadVideo3 ? video3 : undefined}
+                src={loadVideo3 ? "/video-3.mp4" : undefined}
                 className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                 style={{ opacity: activeVideo === 3 ? 1 : 0, zIndex: activeVideo === 3 ? 1 : 0 }}
                 onEnded={handleEnded3}
