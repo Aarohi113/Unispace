@@ -19,7 +19,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
 
   // Mobile optimization states and refs
   const [isMobile, setIsMobile] = useState(false);
-  const mobileVideoRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -29,6 +29,15 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % 3);
+      }, 6000);
+      return () => clearInterval(timer);
+    }
+  }, [isMobile]);
 
 
 
@@ -142,14 +151,61 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
           className="absolute top-0 md:top-0 h-[100dvh] md:h-full left-0 right-0 z-0 overflow-hidden origin-center bg-primary-dark"
         >
           {isMobile ? (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              src="/video-1-comp-again.mp4"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <div className="absolute inset-0 w-full h-full overflow-hidden bg-primary-dark">
+              {/* Slide 1: Round Pan (U-shape) */}
+              <motion.img
+                src="/slideshow-1.jpg"
+                animate={{
+                  opacity: currentSlide === 0 ? 1 : 0,
+                  x: currentSlide === 0 ? ["-6%", "-2%", "6%"] : "-6%",
+                  y: currentSlide === 0 ? ["-6%", "4%", "-6%"] : "-6%",
+                  scale: 1.25
+                }}
+                transition={{
+                  opacity: { duration: 1.2, ease: "easeInOut" },
+                  x: { duration: 6, ease: "easeInOut" },
+                  y: { duration: 6, ease: "easeInOut" }
+                }}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ zIndex: currentSlide === 0 ? 2 : 1 }}
+              />
+
+              {/* Slide 2: Straight Pan (Linear left to right) */}
+              <motion.img
+                src="/slideshow-2.jpg"
+                animate={{
+                  opacity: currentSlide === 1 ? 1 : 0,
+                  x: currentSlide === 1 ? ["-8%", "8%"] : "-8%",
+                  y: currentSlide === 1 ? ["0%", "0%"] : "0%",
+                  scale: 1.25
+                }}
+                transition={{
+                  opacity: { duration: 1.2, ease: "easeInOut" },
+                  x: { duration: 6, ease: "easeInOut" },
+                  y: { duration: 6, ease: "easeInOut" }
+                }}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ zIndex: currentSlide === 1 ? 2 : 1 }}
+              />
+
+              {/* Slide 3: Round Pan (Arch-shape) */}
+              <motion.img
+                src="/slideshow-3.jpg"
+                animate={{
+                  opacity: currentSlide === 2 ? 1 : 0,
+                  x: currentSlide === 2 ? ["-6%", "0%", "6%"] : "-6%",
+                  y: currentSlide === 2 ? ["6%", "-4%", "6%"] : "6%",
+                  scale: 1.25
+                }}
+                transition={{
+                  opacity: { duration: 1.2, ease: "easeInOut" },
+                  x: { duration: 6, ease: "easeInOut" },
+                  y: { duration: 6, ease: "easeInOut" }
+                }}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                style={{ zIndex: currentSlide === 2 ? 2 : 1 }}
+              />
+            </div>
           ) : (
             <>
               {/* Video 1 (video-1.mp4 local asset) */}
