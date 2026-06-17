@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Target, Award, Users } from 'lucide-react';
+import CallToAction from './CallToAction';
 
-const AboutUs = () => {
+const AboutUs = ({ onOpenConsultation }) => {
   // Animation Variants for Scroll-Triggered animations
   const sectionVariants = {
     hidden: { opacity: 0, y: 60 },
@@ -337,6 +338,9 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      {/* 5. Call To Action Section */}
+      <CallToAction onOpenConsultation={onOpenConsultation} />
 
     </div>
   );

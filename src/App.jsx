@@ -149,7 +149,7 @@ function App() {
       <Navbar onOpenConsultation={() => setIsModalOpen(true)} />
 
       {currentPage === 'about' ? (
-        <AboutUs />
+        <AboutUs onOpenConsultation={() => setIsModalOpen(true)} />
       ) : (
         <>
           {/* Main Full-Screen Hero */}
