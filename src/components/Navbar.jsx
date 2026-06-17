@@ -24,7 +24,7 @@ const Navbar = ({ onOpenConsultation }) => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Projects', href: '#projects-all' },
     { name: 'Contact', href: '#contact' },
   ];
 
