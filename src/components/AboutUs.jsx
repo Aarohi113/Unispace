@@ -74,7 +74,7 @@ const AboutUs = () => {
       </section>
 
       {/* 1.5. Corporate Overview & Trust Section */}
-      <section className="py-20 bg-white border-b border-black/5 relative">
+      <section className="py-12 md:py-16 bg-white border-b border-black/5 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
@@ -135,7 +135,7 @@ const AboutUs = () => {
       </section>
 
       {/* 2. Section 2: Left Image, Right Text */}
-      <section className="py-20 md:py-28 border-b border-black/5 bg-white relative">
+      <section className="py-14 md:py-20 border-b border-black/5 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -203,7 +203,7 @@ const AboutUs = () => {
       </section>
 
       {/* 3. Section 3: Right Image, Left Text */}
-      <section className="py-20 md:py-28 bg-primary-bg relative">
+      <section className="py-14 md:py-20 bg-primary-bg relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -271,7 +271,7 @@ const AboutUs = () => {
       </section>
 
       {/* 4. Leadership Section */}
-      <section className="py-20 md:py-28 bg-white border-t border-black/5 relative">
+      <section className="py-14 md:py-20 bg-white border-t border-black/5 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           {/* Header */}
