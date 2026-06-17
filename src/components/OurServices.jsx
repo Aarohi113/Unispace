@@ -45,7 +45,7 @@ const servicesList = [
     tag: "Heavy Utilities",
     title: "Oil, Gas and Petrochemical pipe line and Civil works",
     desc: "Expert heavy utility civil execution for industrial pipelines, handling excavation, deep trenching, structural concrete pads, and robust protective encasements.",
-    image: "",
+    image: "/oil-pipeline.jpg",
     icon: Layers
   },
   {
@@ -69,7 +69,7 @@ const servicesList = [
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "/",
+    image: "/borewell-rainwater-harvesting.jpg",
     icon: CloudRain
   },
   {
@@ -85,7 +85,7 @@ const servicesList = [
     tag: "Demolition & Site Prep",
     title: "Major Demolition Work",
     desc: "Controlled and safe demolition of commercial building blocks, structural concrete walls, and old facilities using advanced machinery and strict safety regulations.",
-    image: "/borewell-rainwater-harvesting.jpg",
+    image: "/major-demo.jpg",
     icon: Hammer
   },
   {
@@ -125,7 +125,7 @@ const servicesList = [
     tag: "Beautification Layouts",
     title: "External Developments and beautifications",
     desc: "Hard and soft landscaping design execution, custom pathways, exterior lighting layouts, parking spaces, and boundary wall enhancements.",
-    image: "/external-beautification.jpg",
+    image: "/external-beauty.jpg",
     icon: Trees
   },
   {
@@ -133,7 +133,7 @@ const servicesList = [
     tag: "Sound & Thermal Shield",
     title: "Sun Controls, Heat and Sound Proofing",
     desc: "High-performance thermal and acoustic insulation fit-outs, installing heat-reflective window films, soundproofing boards, and custom wall padding.",
-    image: "/major-fabrication.jpg",
+    image: "/sun-protect.jpg",
     icon: Shield
   },
   {
@@ -149,7 +149,7 @@ const servicesList = [
     tag: "Project Mobilization",
     title: "Portable Houses, Site offices, and Mega Projects start up activities",
     desc: "Fast startup mobilization including premium mobile site offices, bunkhouses, secure storage containers, perimeter fencing, and initial project utility setups.",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    image: "/portable-house.jpg",
     icon: Home
   }
 ];
@@ -173,7 +173,7 @@ const OurServices = ({ onOpenConsultation }) => {
   const dotY = useTransform(smoothProgress, [0, 1], ["80px", "calc(100% - 80px)"]);
 
   return (
-    <div className="relative min-h-screen bg-primary-bg">
+    <div className="relative min-h-screen bg-primary-bg pt-[80px] md:pt-[90px]">
       {/* Hero Header */}
       <section className="relative h-[50vh] flex flex-col justify-center items-center text-center px-6 bg-primary-dark overflow-hidden">
         {/* Abstract Architectural Background Video / Overlay */}
@@ -181,13 +181,13 @@ const OurServices = ({ onOpenConsultation }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/40 via-primary-dark/85 to-primary-bg z-0" />
 
         <div className="relative z-10 max-w-4xl">
-          <span className="text-xs md:text-sm font-semibold tracking-[0.3em] text-brand-accent uppercase block mb-3 font-sans">
+          <span className="text-sm md:text-base font-semibold tracking-[0.3em] text-brand-accent uppercase block mb-3 font-sans">
             Technical Expertise
           </span>
-          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-light text-white tracking-wide mb-4">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-light text-white tracking-wide mb-4">
             Our Services
           </h1>
-          <p className="font-sans text-xs sm:text-sm text-white/80 max-w-2xl mx-auto uppercase tracking-widest font-light leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm md:text-base text-white/80 max-w-2xl mx-auto uppercase tracking-widest font-light leading-relaxed">
             18 Core capabilities delivering turnkey civil, interior fit-out, and heavy utility engineering.
           </p>
         </div>
@@ -233,13 +233,13 @@ const OurServices = ({ onOpenConsultation }) => {
                       <div className="w-14 h-14 rounded-full border border-luxury-highlight/20 bg-luxury-highlight/5 flex items-center justify-center mb-2">
                         <IconComponent className="w-6 h-6 text-brand-accent stroke-[1.5]" />
                       </div>
-                      <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
+                      <span className="text-xs tracking-[0.25em] text-brand-accent font-bold uppercase font-sans">
                         {service.tag}
                       </span>
-                      <h3 className="font-display text-xl sm:text-2xl font-light text-primary-dark tracking-wide leading-snug">
+                      <h3 className="font-display text-2xl sm:text-3xl font-normal text-primary-dark tracking-wide leading-snug">
                         {service.title}
                       </h3>
-                      <p className="font-sans text-xs md:text-sm text-text-charcoal/70 leading-relaxed font-light max-w-lg">
+                      <p className="font-sans text-sm sm:text-[15px] text-text-charcoal/85 leading-relaxed font-normal max-w-lg">
                         {service.desc}
                       </p>
                     </motion.div>
@@ -283,13 +283,13 @@ const OurServices = ({ onOpenConsultation }) => {
                       <div className="w-14 h-14 rounded-full border border-luxury-highlight/20 bg-luxury-highlight/5 flex items-center justify-center mb-2">
                         <IconComponent className="w-6 h-6 text-brand-accent stroke-[1.5]" />
                       </div>
-                      <span className="text-[10px] tracking-[0.2em] text-brand-accent font-bold uppercase font-sans">
+                      <span className="text-xs tracking-[0.25em] text-brand-accent font-bold uppercase font-sans">
                         {service.tag}
                       </span>
-                      <h3 className="font-display text-xl sm:text-2xl font-light text-primary-dark tracking-wide leading-snug">
+                      <h3 className="font-display text-2xl sm:text-3xl font-normal text-primary-dark tracking-wide leading-snug">
                         {service.title}
                       </h3>
-                      <p className="font-sans text-xs md:text-sm text-text-charcoal/70 leading-relaxed font-light max-w-lg">
+                      <p className="font-sans text-sm sm:text-[15px] text-text-charcoal/85 leading-relaxed font-normal max-w-lg">
                         {service.desc}
                       </p>
                     </motion.div>
