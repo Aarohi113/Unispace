@@ -99,7 +99,8 @@ function App() {
 
     if (webhookUrl) {
       try {
-        await fetch(webhookUrl, {
+        console.log("Submitting consultation form to:", webhookUrl, formData);
+        const response = await fetch(webhookUrl, {
           method: "POST",
           mode: "no-cors",
           headers: {
@@ -107,6 +108,7 @@ function App() {
           },
           body: JSON.stringify(formData)
         });
+        console.log("Fetch consultation response:", response);
       } catch (error) {
         console.error("Error submitting consultation form:", error);
       }
@@ -144,7 +146,8 @@ function App() {
 
     if (webhookUrl) {
       try {
-        await fetch(webhookUrl, {
+        console.log("Submitting footer form to:", webhookUrl, footerData);
+        const response = await fetch(webhookUrl, {
           method: "POST",
           mode: "no-cors",
           headers: {
@@ -152,6 +155,7 @@ function App() {
           },
           body: JSON.stringify(footerData)
         });
+        console.log("Fetch footer response:", response);
       } catch (error) {
         console.error("Error submitting footer inquiry form:", error);
       }
@@ -367,7 +371,7 @@ function App() {
                 <a href="#home" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Home</a>
                 <a href="#projects" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Projects</a>
                 <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Services</a>
-                <a href="#contact" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Contact Us</a>
+                <a href="#contact-us" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Contact Us</a>
               </div>
             </div>
 
@@ -396,8 +400,20 @@ function App() {
               </div>
             </div>
 
-
-
+            {/* Column 4: Quick Inquiry */}
+            <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4 w-full">
+              <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
+                Quick Inquiry
+              </h4>
+              <p className="text-xs text-text-charcoal/60 leading-relaxed font-light font-sans max-w-[240px]">
+                Have questions about our turnkey services or corporate designs? Let's connect.
+              </p>
+              <a href="#contact-us" className="w-full">
+                <Button variant="primary" className="w-full py-3 text-xs uppercase tracking-widest font-semibold justify-center rounded-none mt-1">
+                  Send Inquiry
+                </Button>
+              </a>
+            </div>
 
           </div>
 
@@ -484,7 +500,7 @@ function App() {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          placeholder="Johnathan Doe"
+                          placeholder="Enter your name"
                           className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-luxury-highlight font-sans text-primary-dark"
                         />
                       </div>
@@ -500,7 +516,7 @@ function App() {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          placeholder="jdoe@company.com"
+                          placeholder="Enter your email"
                           className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-luxury-highlight font-sans text-primary-dark"
                         />
                       </div>
@@ -516,7 +532,7 @@ function App() {
                           required
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="+91 99000 88000"
+                          placeholder="Enter your contact"
                           className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-luxury-highlight font-sans text-primary-dark"
                         />
                       </div>

@@ -25,7 +25,8 @@ const ContactUs = () => {
     
     if (webhookUrl) {
       try {
-        await fetch(webhookUrl, {
+        console.log("Submitting contact form to:", webhookUrl, formData);
+        const response = await fetch(webhookUrl, {
           method: "POST",
           mode: "no-cors",
           headers: {
@@ -33,6 +34,7 @@ const ContactUs = () => {
           },
           body: JSON.stringify(formData)
         });
+        console.log("Fetch contact form response:", response);
       } catch (error) {
         console.error("Error submitting contact form:", error);
       }
@@ -213,7 +215,7 @@ const ContactUs = () => {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="Johnathan Doe"
+                        placeholder="Enter your name"
                         className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-brand-accent font-sans text-primary-dark"
                       />
                     </div>
@@ -227,7 +229,7 @@ const ContactUs = () => {
                         required
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+91 99000 88000"
+                        placeholder="Enter your contact"
                         className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-brand-accent font-sans text-primary-dark"
                       />
                     </div>
@@ -245,7 +247,7 @@ const ContactUs = () => {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="jdoe@company.com"
+                        placeholder="Enter your email"
                         className="w-full bg-white border border-black/10 px-4 py-3 text-sm focus:outline-none focus:border-brand-accent font-sans text-primary-dark"
                       />
                     </div>

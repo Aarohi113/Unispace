@@ -68,9 +68,11 @@ const Navbar = ({ onOpenConsultation }) => {
 
           {/* Call to Action Button */}
           <div className="hidden lg:flex items-center">
-            <Button variant="nav" onClick={onOpenConsultation}>
-              Book Consultation
-            </Button>
+            <a href="#contact-us">
+              <Button variant="nav">
+                Book Consultation
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -133,16 +135,18 @@ const Navbar = ({ onOpenConsultation }) => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="relative z-10 flex flex-col gap-5"
             >
-              <Button
-                variant="primary"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  onOpenConsultation();
-                }}
-                className="w-full py-4 text-center justify-center rounded-none"
+              <a
+                href="#contact-us"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full"
               >
-                Book Consultation
-              </Button>
+                <Button
+                  variant="primary"
+                  className="w-full py-4 text-center justify-center rounded-none"
+                >
+                  Book Consultation
+                </Button>
+              </a>
               <div className="text-center text-text-charcoal/40 text-[10px] uppercase tracking-widest">
                 Unispace Contracts &copy; 2026
               </div>
