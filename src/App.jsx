@@ -36,18 +36,17 @@ function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
+      // Instantly scroll to the top of the page on any redirect
+      window.scrollTo(0, 0);
+
       if (window.location.hash === '#about') {
         setCurrentPage('about');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (window.location.hash === '#projects-all') {
         setCurrentPage('projects-all');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (window.location.hash === '#services') {
         setCurrentPage('services');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (window.location.hash === '#contact-us') {
         setCurrentPage('contact');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setCurrentPage('home');
       }
@@ -369,7 +368,8 @@ function App() {
               </h4>
               <div className="flex flex-col items-center md:items-start gap-2.5 text-xs font-sans">
                 <a href="#home" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Home</a>
-                <a href="#projects" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Projects</a>
+                <a href="#about" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">About Us</a>
+                <a href="#projects-all" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Projects</a>
                 <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Services</a>
                 <a href="#contact-us" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Contact Us</a>
               </div>
