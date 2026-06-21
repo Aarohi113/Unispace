@@ -53,7 +53,7 @@ const servicesList = [
     tag: "Trenchless Engineering",
     title: "HDD method services laying",
     desc: "Horizontal Directional Drilling for installing telecom, power, and water utilities underground with minimal surface disruption and precise directional guidance.",
-    image: "/hdd-services-laying.jpg",
+    image: "/HDD-method.jpg",
     icon: HardDrive
   },
   {
@@ -69,7 +69,7 @@ const servicesList = [
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "/borewell-rainwater-harvesting.jpg",
+    image: "/boring-borewell.jpg",
     icon: CloudRain
   },
   {
@@ -77,7 +77,7 @@ const servicesList = [
     tag: "Transportation Link",
     title: "RCC Road",
     desc: "Heavy-duty reinforced cement concrete roadways constructed for industrial estates, commercial complex driveways, and long-term structural durability.",
-    image: "/water-piping-distribution.jpg",
+    image: "/rcc-road.jpg",
     icon: Milestone
   },
   {
@@ -93,7 +93,7 @@ const servicesList = [
     tag: "Prefabricated Structures",
     title: "Modern Pre-Fab buildings and Industrial Shed",
     desc: "High-speed assembly of steel pre-fabricated structures, modular storage sheds, and industrial warehouses built with high structural wind resistance.",
-    image: "/rcc-road.jpg",
+    image: "/shed-industry.jpg",
     icon: Warehouse
   },
   {
@@ -101,7 +101,7 @@ const servicesList = [
     tag: "MEP Engineering",
     title: "MEP",
     desc: "Integrated Mechanical, Electrical, and Plumbing engineering services, executing complex air conditioning ducting, corporate electrical grids, and automated fire controls.",
-    image: "/major-demolition.jpg",
+    image: "/MEP-real-img.jpg",
     icon: Cpu
   },
   {
@@ -125,7 +125,7 @@ const servicesList = [
     tag: "Beautification Layouts",
     title: "External Developments and beautifications",
     desc: "Hard and soft landscaping design execution, custom pathways, exterior lighting layouts, parking spaces, and boundary wall enhancements.",
-    image: "/external-beauty.jpg",
+    image: "/external-dev.avif",
     icon: Trees
   },
   {
@@ -141,7 +141,7 @@ const servicesList = [
     tag: "Environmental Systems",
     title: "Treatment Plants and Environments Protections",
     desc: "Turnkey waste and water treatment facilities, engineering water recycling plants, environmental filter systems, and sustainable discharge systems.",
-    image: "/misc-civil-works.jpg",
+    image: "/STP-Treatment-plant.jpg",
     icon: Leaf
   },
   {

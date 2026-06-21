@@ -206,6 +206,11 @@ body {
     transform: translateY(0);
     transition-delay: 0.2s;
   }
+
+  .pos-top-right .proj-card-details,
+  .pos-bottom-right .proj-card-details {
+    text-align: right;
+  }
 }
 
 .project-card img {

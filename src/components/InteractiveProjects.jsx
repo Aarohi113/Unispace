@@ -128,7 +128,7 @@ const InteractiveProjects = () => {
               onClick={() => window.location.hash = '#projects-all'}
             >
               <img
-                src="/genpact-interior.jpg"
+                src="/genpact.jpeg"
                 alt="Genpact - Interior"
                 loading="lazy"
                 decoding="async"
@@ -176,14 +176,14 @@ const InteractiveProjects = () => {
               onClick={() => window.location.hash = '#projects-all'}
             >
               <img
-                src="/gail-workspace.png"
-                alt="Gail Project"
+                src="/incuz.jpeg"
+                alt="Incuspaze Project"
                 loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
               <div className="proj-card-details">
-                <h3 className="font-display font-light tracking-wide text-white mb-2">Gail<br />Project</h3>
+                <h3 className="font-display font-light tracking-wide text-white mb-2">Incuspaze<br />Project</h3>
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Premium modern conference layouts backed by automated utilities.
                 </p>

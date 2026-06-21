@@ -7,7 +7,7 @@ const AllProjects = ({ onOpenConsultation }) => {
   // Project list containing 11 premium projects
   const projects = [
     {
-      title: "Gail Pipeline Project",
+      title: "Brookfield Office",
       category: "Utility & MEP Infrastructure",
       location: "Noida, India",
       year: "2025",
@@ -23,11 +23,11 @@ const AllProjects = ({ onOpenConsultation }) => {
       description: "High-density modular seating architectures optimizing floor layouts while providing premium comfort."
     },
     {
-      title: "Interior Fit Out Work - Genpact (Phase 2)",
+      title: "Board Room - Genpact (Phase 2)",
       category: "Executive Workspace Design",
       location: "Gurugram, India",
       year: "2025",
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+      image: "/genpact.jpeg",
       description: "Collaborative workspace lounge zones and executive boardrooms featuring premium custom acoustics."
     },
     {
@@ -43,7 +43,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Co-Working Managed Workspace",
       location: "Noida, India",
       year: "2025",
-      image: "/incuspaze-managed.png",
+      image: "/incuz-2.jpeg",
       description: "A vibrant managed co-working setup focusing on smart meeting pods, shared collaboration desks, and modern café zones."
     },
     {
@@ -59,16 +59,16 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Administrative Civil Execution",
       location: "Bulandshahr, India",
       year: "2024",
-      image: "/iocl-adani-gas.png",
-      description: "Strategic joint venture administrative facility construction and high-grade functional interior execution."
+      image: "/IOCL-CNG.jpg",
+      description: "Strategic joint venture administrative facility construction and high-grade functional GAS pipeline."
     },
     {
-      title: "GL Golden (Sub Contract basis)",
+      title: "Think Gas (Sub Contract basis)",
       category: "Civil Layout Structure",
       location: "Bengaluru, India",
       year: "2025",
-      image: "/gl-golden.png",
-      description: "Premium subcontracted civil layout structural fit-outs, executing ceiling grids and partition installations."
+      image: "/mdpe-think_gas.jpeg",
+      description: "Premium laying of MDPE pipeline."
     },
     {
       title: "TV Today Studio",

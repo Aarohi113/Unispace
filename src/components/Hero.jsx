@@ -241,7 +241,7 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
                 muted
                 preload={loadVideo2 ? "auto" : "none"}
                 playsInline
-                src={loadVideo2 ? "/video-2.mp4" : undefined}
+                src={loadVideo2 ? "/Video-Project.mp4" : undefined}
                 className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
                 style={{ opacity: activeVideo === 2 ? 1 : 0, zIndex: activeVideo === 2 ? 1 : 0 }}
                 onEnded={handleEnded2}
@@ -261,11 +261,12 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             </>
           )}
  
+ 
           {/* Blueprint gridlines inside video container */}
-          <div className="absolute inset-0 z-10 pointer-events-none opacity-5 flex justify-between px-10 md:px-24">
-            <div className="w-[1px] h-full bg-white" />
-            <div className="w-[1px] h-full bg-white hidden md:block" />
-            <div className="w-[1px] h-full bg-white" />
+          <div className="absolute inset-0 z-[4] pointer-events-none opacity-5 flex justify-between px-10 md:px-24">
+            <div className="w-[1px] h-full bg-primary-dark" />
+            <div className="w-[1px] h-full bg-primary-dark hidden md:block" />
+            <div className="w-[1px] h-full bg-primary-dark" />
           </div>
         </motion.div>
  
@@ -276,25 +277,25 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
         >
           <div className="max-w-3xl text-left pointer-events-auto">
             {/* Tag */}
-            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 border-l-2 border-luxury-highlight bg-black/20 backdrop-blur-sm mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+            <div className="inline-flex items-center gap-2.5 px-3 py-1.5 border-l-2 border-luxury-highlight bg-primary-bg/85 backdrop-blur-sm mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse" />
-              <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-white/90 uppercase font-sans">
+              <span className="text-[10px] md:text-xs font-semibold tracking-[0.25em] text-primary-dark/90 uppercase font-sans">
                 Corporate Interior & Fit-Out Experts
               </span>
             </div>
 
             {/* Heading */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-wide leading-[1.3] md:leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-dark tracking-wide leading-[1.3] md:leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(248,247,243,0.9)]">
               Transforming <br className="hidden md:inline" />
               Workspaces Into <br />
-              <span className="font-semibold text-luxury-highlight relative inline-block group">
+              <span className="font-semibold text-brand-accent relative inline-block group">
                 Experiences
-                <span className="absolute bottom-1 left-0 w-full h-[3px] bg-luxury-highlight/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className="absolute bottom-1 left-0 w-full h-[3px] bg-brand-accent/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </span>
             </h1>
 
             {/* Description */}
-            <p className="font-sans text-xs sm:text-sm md:text-base text-white/95 leading-relaxed font-normal mb-6 max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+            <p className="font-sans text-xs sm:text-sm md:text-base text-primary-dark/95 leading-relaxed font-normal mb-6 max-w-2xl drop-shadow-[0_2px_8px_rgba(248,247,243,0.9)]">
               Creating premium work environments with innovative design, precision execution and world-class craftsmanship.
             </p>
 
@@ -304,23 +305,23 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
                 Explore Projects
                 <ArrowRight className="w-4 h-4" />
               </Button>
-              <Button variant="outline" onClick={onContactUs} className="bg-black/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-primary-dark">
+              <Button variant="outline" onClick={onContactUs} className="bg-primary-bg/30 backdrop-blur-sm border-primary-dark/30 text-primary-dark hover:bg-primary-dark hover:text-primary-bg">
                 Contact Us
-                <ArrowUpRight className="w-4 h-4 text-luxury-highlight group-hover:text-white" />
+                <ArrowUpRight className="w-4 h-4 text-brand-accent group-hover:text-primary-bg" />
               </Button>
             </div>
           </div>
         </motion.div>
-
-
-
+ 
+ 
+ 
         {/* Coordinates overlay - scales down with scroll */}
         <motion.div
           style={{ opacity: coordsOpacity }}
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 hidden xl:flex flex-col items-center gap-4 text-[9px] tracking-[0.3em] uppercase text-white/30 [writing-mode:vertical-lr]"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-20 hidden xl:flex flex-col items-center gap-4 text-[9px] tracking-[0.3em] uppercase text-primary-dark/35 [writing-mode:vertical-lr]"
         >
           <span>UNISPACE STUDIO &copy;</span>
-          <div className="w-[1px] h-16 bg-white/20" />
+          <div className="w-[1px] h-16 bg-primary-dark/20" />
           <span>12.9716&deg; N, 77.5946&deg; E</span>
         </motion.div>
 

@@ -136,7 +136,7 @@ function App() {
       name: formEl.elements.name.value,
       phone: formEl.elements.phone.value,
       email: formEl.elements.email.value,
-      subject: "Quick Footer Inquiry",
+      subject: "Quick Footer Enquiry",
       message: "Submitted from quick footer form."
     };
 
@@ -156,7 +156,7 @@ function App() {
         });
         console.log("Fetch footer response:", response);
       } catch (error) {
-        console.error("Error submitting footer inquiry form:", error);
+        console.error("Error submitting footer Enquiry form:", error);
       }
     }
 
@@ -403,14 +403,14 @@ function App() {
             {/* Column 4: Quick Inquiry */}
             <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4 w-full">
               <h4 className="font-display text-sm font-semibold text-primary-dark tracking-widest uppercase">
-                Quick Inquiry
+                Quick Enquiry
               </h4>
               <p className="text-xs text-text-charcoal/60 leading-relaxed font-light font-sans max-w-[240px]">
                 Have questions about our turnkey services or corporate designs? Let's connect.
               </p>
               <a href="#contact-us" className="w-full">
                 <Button variant="primary" className="w-full py-3 text-xs uppercase tracking-widest font-semibold justify-center rounded-none mt-1">
-                  Send Inquiry
+                  Send Enquiry
                 </Button>
               </a>
             </div>
@@ -480,7 +480,7 @@ function App() {
                         <CheckCircle2 className="w-8 h-8 text-secondary-accent" />
                       </div>
                       <h4 className="font-display text-xl font-semibold text-primary-dark mb-2">
-                        Inquiry Received
+                        Enquiry Received
                       </h4>
                       <p className="text-xs text-text-charcoal/70 leading-relaxed max-w-xs">
                         An architecture partner from Unispace Contracts will review your corporate specifications and reach out within 1 business day.

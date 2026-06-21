@@ -45,7 +45,7 @@ const Navbar = ({ onOpenConsultation }) => {
             <img
               src={unispaceLogo}
               alt="Unispace Contracts Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
             />
           </a>
 
@@ -70,7 +70,7 @@ const Navbar = ({ onOpenConsultation }) => {
           <div className="hidden lg:flex items-center">
             <a href="#contact-us">
               <Button variant="nav">
-                Book Consultation
+                Book Site Visit
               </Button>
             </a>
           </div>
