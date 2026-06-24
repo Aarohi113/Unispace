@@ -75,7 +75,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       category: "Acoustic Broadcast Studio",
       location: "Noida, India",
       year: "2025",
-      image: "/tv-today-studio.jpg",
+      image: "/tv-today.png",
       description: "Acoustic broadcast studio fit-out, engineering soundproof production bays and media presentation environments."
     },
     {
