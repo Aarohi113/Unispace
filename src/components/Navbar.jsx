@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import Button from './Button';
 import unispaceLogo from '../assets/unispacelogo.png';
 
-const Navbar = ({ onOpenConsultation }) => {
+const Navbar = ({ currentPage = 'home', onOpenConsultation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,6 +20,17 @@ const Navbar = ({ onOpenConsultation }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const showScrolledState = isScrolled || currentPage !== 'home';
+
+  const isHome = currentPage === 'home';
+  const logoClass = isHome
+    ? 'h-[42px] sm:h-[46px] md:h-[52px]'
+    : 'h-[50px] sm:h-[58px] md:h-[66px]';
+
+  const navPadding = isHome
+    ? (showScrolledState ? 'py-1.5 sm:py-2' : 'py-2 sm:py-3.5')
+    : (showScrolledState ? 'py-2.5 sm:py-3' : 'py-3.5 sm:py-4.5');
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -34,9 +45,9 @@ const Navbar = ({ onOpenConsultation }) => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? 'bg-primary-bg/95 border-b border-black/5 shadow-lg py-2.5 sm:py-4'
-          : 'bg-black/10 backdrop-blur-md border-b border-white/10 py-3 sm:py-5'
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${showScrolledState
+          ? `top-0 bg-white/90 backdrop-blur-sm border-b border-black/5 shadow-lg ${navPadding}`
+          : `top-8 sm:top-11 bg-black/10 backdrop-blur-sm border-b border-white/10 ${navPadding}`
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -45,7 +56,7 @@ const Navbar = ({ onOpenConsultation }) => {
             <img
               src={unispaceLogo}
               alt="Unispace Contracts Logo"
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              className={`${logoClass} w-auto object-contain`}
             />
           </a>
 
@@ -55,12 +66,12 @@ const Navbar = ({ onOpenConsultation }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative font-sans text-xs uppercase tracking-widest font-semibold py-1.5 transition-colors duration-300 ${isScrolled ? 'text-primary-dark/80 hover:text-brand-accent' : 'text-white/80 hover:text-luxury-highlight'
+                className={`relative font-sans text-xs uppercase tracking-widest font-semibold py-1.5 transition-colors duration-300 ${showScrolledState ? 'text-primary-dark/80 hover:text-brand-accent' : 'text-white/80 hover:text-luxury-highlight'
                   } group`}
               >
                 {link.name}
                 {/* Custom animated underline */}
-                <span className={`absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full ${isScrolled ? 'bg-brand-accent' : 'bg-luxury-highlight'
+                <span className={`absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full ${showScrolledState ? 'bg-brand-accent' : 'bg-luxury-highlight'
                   }`} />
               </a>
             ))}
@@ -78,7 +89,7 @@ const Navbar = ({ onOpenConsultation }) => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-1.5 focus:outline-none transition-colors duration-300 ${isScrolled ? 'text-primary-dark hover:text-brand-accent' : 'text-white hover:text-luxury-highlight'
+            className={`lg:hidden p-1.5 focus:outline-none transition-colors duration-300 ${showScrolledState ? 'text-primary-dark hover:text-brand-accent' : 'text-white hover:text-luxury-highlight'
               }`}
             aria-label="Toggle menu"
           >
@@ -144,7 +155,7 @@ const Navbar = ({ onOpenConsultation }) => {
                   variant="primary"
                   className="w-full py-4 text-center justify-center rounded-none"
                 >
-                  Book Consultation
+                  Book Site Visit
                 </Button>
               </a>
               <div className="text-center text-text-charcoal/40 text-[10px] uppercase tracking-widest">

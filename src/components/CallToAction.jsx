@@ -48,22 +48,23 @@ const CallToAction = ({ onOpenConsultation }) => {
         </motion.p>
 
         {/* Action Button (Transparent with thin white border, gold highlight on hover) */}
-        <motion.button
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ 
-            scale: 1.05,
-            borderColor: '#C8A96A',
-            color: '#C8A96A',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)'
-          }}
-          onClick={onOpenConsultation}
-          className="mt-6 px-8 py-3.5 border border-white text-white font-sans text-xs tracking-[0.2em] font-semibold uppercase transition-all duration-300 cursor-pointer"
-        >
-          Witness Our Work in Action
-        </motion.button>
+        <a href="#contact-us">
+          <motion.button
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ 
+              scale: 1.05,
+              borderColor: '#C8A96A',
+              color: '#C8A96A',
+              backgroundColor: 'rgba(0, 0, 0, 0.3)'
+            }}
+            className="mt-6 px-8 py-3.5 border border-white text-white font-sans text-xs tracking-[0.2em] font-semibold uppercase transition-all duration-300 cursor-pointer"
+          >
+            Witness Our Work in Action
+          </motion.button>
+        </a>
 
       </div>
     </section>

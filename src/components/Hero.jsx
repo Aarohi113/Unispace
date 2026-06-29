@@ -285,17 +285,33 @@ const Hero = ({ onExploreProjects, onContactUs }) => {
             </div>
 
             {/* Heading */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-dark tracking-wide leading-[1.3] md:leading-[1.15] mb-4 drop-shadow-[0_4px_16px_rgba(248,247,243,0.9)]">
+            <h1 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-wide leading-[1.3] md:leading-[1.15] mb-4 transition-all duration-700 ${
+              isMobile && currentSlide === 2
+                ? 'text-[#F5F1E8] drop-shadow-[0_4px_16px_rgba(0,0,0,0.55)]'
+                : 'text-primary-dark drop-shadow-[0_4px_16px_rgba(248,247,243,0.9)]'
+            }`}>
               Transforming <br className="hidden md:inline" />
               Workspaces Into <br />
-              <span className="font-semibold text-brand-accent relative inline-block group">
+              <span className={`font-semibold relative inline-block group transition-colors duration-700 ${
+                isMobile && currentSlide === 2
+                  ? 'text-[#E63935]'
+                  : 'text-brand-accent'
+              }`}>
                 Experiences
-                <span className="absolute bottom-1 left-0 w-full h-[3px] bg-brand-accent/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className={`absolute bottom-1 left-0 w-full h-[3px] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left ${
+                  isMobile && currentSlide === 2
+                    ? 'bg-[#E63935]/40'
+                    : 'bg-brand-accent/40'
+                }`} />
               </span>
             </h1>
 
             {/* Description */}
-            <p className="font-sans text-xs sm:text-sm md:text-base text-primary-dark/95 leading-relaxed font-normal mb-6 max-w-2xl drop-shadow-[0_2px_8px_rgba(248,247,243,0.9)]">
+            <p className={`font-sans text-xs sm:text-sm md:text-base leading-relaxed font-normal mb-6 max-w-2xl transition-all duration-700 ${
+              isMobile && currentSlide === 2
+                ? 'text-[#F5F1E8]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]'
+                : 'text-primary-dark/95 drop-shadow-[0_2px_8px_rgba(248,247,243,0.9)]'
+            }`}>
               Creating premium work environments with innovative design, precision execution and world-class craftsmanship.
             </p>
 

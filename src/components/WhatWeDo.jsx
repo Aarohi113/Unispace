@@ -79,7 +79,7 @@ const services = [
     tag: "Environment",
     title: "Treatment Plants",
     desc: "Water treatment plants and environmental protection infrastructure built to meet compliance standards and reduce environmental impact.",
-    image: "/misc-civil-works.jpg"
+    image: "/STP-Treatment-plant.jpg"
   },
   {
     num: "15",

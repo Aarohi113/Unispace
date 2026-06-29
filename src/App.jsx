@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, MapPin, Phone, Mail, ArrowUpRight, CheckCircle2, ChevronRight, Award, Briefcase, Users } from 'lucide-react';
 import Navbar from './components/Navbar';
+import TopMarquee from './components/TopMarquee';
 import Hero from './components/Hero';
 import Button from './components/Button';
 import TrustStripe from './components/TrustStripe';
@@ -220,8 +221,11 @@ function App() {
 
       <div className="relative min-h-screen bg-primary-bg selection:bg-luxury-highlight selection:text-primary-dark">
 
+        {/* Top Announcement/Trust Marquee */}
+        {currentPage === 'home' && <TopMarquee />}
+
         {/* Floating Navbar */}
-        <Navbar onOpenConsultation={() => setIsModalOpen(true)} />
+        <Navbar currentPage={currentPage} onOpenConsultation={() => setIsModalOpen(true)} />
 
         {currentPage === 'about' ? (
           <AboutUs onOpenConsultation={() => setIsModalOpen(true)} />

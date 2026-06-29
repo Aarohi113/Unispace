@@ -11,7 +11,7 @@ const servicesList = [
   {
     num: "01",
     tag: "Commercial Development",
-    title: "Commercial / Institution & others urban project",
+    title: "Turnkey Projects/ Design & Build",
     desc: "Turnkey urban developments, educational institutes, and retail complexes designed and executed to meet global institutional safety and performance standards.",
     image: "/commercial-urban.jpg",
     icon: Building2
@@ -69,7 +69,7 @@ const servicesList = [
     tag: "Sustainable Water",
     title: "Boring, Bore well and Rain Water Harvesting",
     desc: "Sustainable water resource development, including deep borewell drilling, structural well rings, and rainwater harvesting groundwater recharge systems.",
-    image: "/boring-borewell.jpg",
+    image: "/rainharvest.jpeg",
     icon: CloudRain
   },
   {
@@ -173,7 +173,7 @@ const OurServices = ({ onOpenConsultation }) => {
   const dotY = useTransform(smoothProgress, [0, 1], ["80px", "calc(100% - 80px)"]);
 
   return (
-    <div className="relative min-h-screen bg-primary-bg pt-[80px] md:pt-[90px]">
+    <div className="relative min-h-screen bg-primary-bg pt-[80px] md:pt-[60px]">
       {/* Hero Header */}
       <section className="relative h-[50vh] flex flex-col justify-center items-center text-center px-6 bg-primary-dark overflow-hidden">
         {/* Abstract Architectural Background Video / Overlay */}

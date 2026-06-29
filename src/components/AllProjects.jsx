@@ -15,17 +15,17 @@ const AllProjects = ({ onOpenConsultation }) => {
       description: "Turnkey pipeline design-build planning, MEP, and corporate fit-out works managing utility and administrative hubs."
     },
     {
-      title: "Interior Fit Out Work - Genpact (Phase 1)",
+      title: "Premium Residential Interior",
       category: "Modular Turnkey Fit-Out",
-      location: "Gurugram, India",
+      location: "Noida, Sector 62",
       year: "2024",
-      image: "/genpact-interior.jpg",
+      image: "/residential-img.jpeg",
       description: "High-density modular seating architectures optimizing floor layouts while providing premium comfort."
     },
     {
       title: "Board Room - Genpact (Phase 2)",
       category: "Executive Workspace Design",
-      location: "Gurugram, India",
+      location: "Jaipur, India",
       year: "2025",
       image: "/genpact.jpeg",
       description: "Collaborative workspace lounge zones and executive boardrooms featuring premium custom acoustics."
@@ -56,15 +56,15 @@ const AllProjects = ({ onOpenConsultation }) => {
     },
     {
       title: "IOCL Adani Gas Pvt Ltd., Bulandshehar",
-      category: "Administrative Civil Execution",
-      location: "Bulandshahr, India",
+
+      location: "Baghpat, India",
       year: "2024",
       image: "/IOCL-CNG.jpg",
       description: "Strategic joint venture administrative facility construction and high-grade functional GAS pipeline."
     },
     {
       title: "Think Gas (Sub Contract basis)",
-      category: "Civil Layout Structure",
+
       location: "Bengaluru, India",
       year: "2025",
       image: "/mdpe-think_gas.jpeg",
@@ -74,12 +74,12 @@ const AllProjects = ({ onOpenConsultation }) => {
       title: "TV Today Studio",
       category: "Acoustic Broadcast Studio",
       location: "Noida, India",
-      year: "2025",
+      year: "2023",
       image: "/tv-today.png",
       description: "Acoustic broadcast studio fit-out, engineering soundproof production bays and media presentation environments."
     },
     {
-      title: "Vidyagyan School (Interior and Faculty Upgradation)",
+      title: "Vidyagyan School (Interior and Facility Upgradation)",
       category: "Institutional Upgrades",
       location: "Bulandshahr, India",
       year: "2024",
@@ -115,20 +115,16 @@ const AllProjects = ({ onOpenConsultation }) => {
   });
 
   return (
-    <div className="bg-primary-bg min-h-screen pt-[80px] font-sans text-text-charcoal overflow-x-hidden">
+    <div className="bg-primary-bg min-h-screen pt-[50px] font-sans text-text-charcoal overflow-x-hidden">
 
       {/* 1. Hero Section with Video */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden bg-primary-dark">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 scale-105"
-        >
-          <source src="/video-2.mp4" type="video/mp4" />
-        </video>
+        {/* Background Image */}
+        <img
+          src="/microsoft.jpeg"
+          alt="Engineering Masterpieces Background"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30 scale-105"
+        />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-transparent to-black/50 z-1" />
 
@@ -162,7 +158,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       </section>
 
       {/* 2. Grid Section - 2 Columns with Left/Right Scroll Reveal */}
-      <section className="py-20 bg-white relative">
+      <section className="py-10 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16">

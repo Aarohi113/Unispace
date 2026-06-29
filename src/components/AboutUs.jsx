@@ -2,13 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Target, Award, Users } from 'lucide-react';
 import CallToAction from './CallToAction';
+import TrustStripe from './TrustStripe';
 
 const AboutUs = ({ onOpenConsultation }) => {
   // Animation Variants for Scroll-Triggered animations
   const sectionVariants = {
     hidden: { opacity: 0, y: 60 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
@@ -16,23 +17,23 @@ const AboutUs = ({ onOpenConsultation }) => {
 
   const imageVariants = (direction) => ({
     hidden: { opacity: 0, x: direction === 'left' ? -80 : 80 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }
     }
   });
 
   return (
-    <div className="bg-primary-bg min-h-screen pt-[80px] font-sans text-text-charcoal overflow-x-hidden">
-      
+    <div className="bg-primary-bg min-h-screen pt-[60px] font-sans text-text-charcoal overflow-x-hidden">
+
       {/* 1. Hero Section (60-70vh) */}
       <section className="relative h-[65vh] w-full flex items-center justify-center overflow-hidden">
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80" 
-            alt="Unispace Corporate Office Background" 
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
+            alt="Unispace Corporate Office Background"
             className="w-full h-full object-cover scale-105"
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
@@ -40,7 +41,7 @@ const AboutUs = ({ onOpenConsultation }) => {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -48,7 +49,7 @@ const AboutUs = ({ onOpenConsultation }) => {
           >
             WHO WE ARE
           </motion.span>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -56,7 +57,7 @@ const AboutUs = ({ onOpenConsultation }) => {
           >
             About <span className="font-semibold text-luxury-highlight">Unispace</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -74,13 +75,16 @@ const AboutUs = ({ onOpenConsultation }) => {
         </div>
       </section>
 
+      {/* Trust Stripe Section */}
+      <TrustStripe />
+
       {/* 1.5. Corporate Overview & Trust Section */}
       <section className="py-12 md:py-16 bg-white border-b border-black/5 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
+
             {/* Left side: Heading/Tagline */}
-            <motion.div 
+            <motion.div
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
@@ -98,7 +102,7 @@ const AboutUs = ({ onOpenConsultation }) => {
             </motion.div>
 
             {/* Right side: Refined Copy & Clients */}
-            <motion.div 
+            <motion.div
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
@@ -108,7 +112,7 @@ const AboutUs = ({ onOpenConsultation }) => {
               <p className="text-base md:text-lg text-text-charcoal/80 leading-relaxed font-sans font-light">
                 Unispace Contracts Private Limited stands as a premier vanguard in the civil and interior fit-out industry, orchestrating high-end design-build solutions tailored exclusively for modern corporate environments. With an illustrious legacy of execution excellence, we have collaborated with global industry giants, engineering environments that foster innovation and growth.
               </p>
-              
+
               <p className="text-sm md:text-base text-text-charcoal/65 leading-relaxed font-sans">
                 Our comprehensive expertise spans the design, execution, and master management of large-scale commercial infrastructures—harmonizing strict operational efficiency, sophisticated design aesthetics, and seamless functionality.
               </p>
@@ -120,8 +124,8 @@ const AboutUs = ({ onOpenConsultation }) => {
                 </span>
                 <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
                   {['HCL', 'Genpact', 'Microsoft', 'Google', 'Gail', 'Adani', 'Samsung'].map((client) => (
-                    <span 
-                      key={client} 
+                    <span
+                      key={client}
                       className="text-xs md:text-sm font-semibold text-text-charcoal/60 bg-primary-bg px-3 py-1.5 rounded-md border border-black/5 hover:border-brand-accent/25 hover:text-brand-accent transition-all duration-300"
                     >
                       {client}
@@ -139,18 +143,18 @@ const AboutUs = ({ onOpenConsultation }) => {
       <section className="py-14 md:py-20 border-b border-black/5 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Side: Animated Image */}
-            <motion.div 
+            <motion.div
               variants={imageVariants('left')}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-primary-dark group cursor-pointer"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80" 
-                alt="Workspace Collaboration Areas" 
+              <img
+                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80"
+                alt="Workspace Collaboration Areas"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
               <div className="absolute bottom-6 left-6 z-10">
@@ -161,7 +165,7 @@ const AboutUs = ({ onOpenConsultation }) => {
             </motion.div>
 
             {/* Right Side: Animated Text */}
-            <motion.div 
+            <motion.div
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
@@ -207,9 +211,9 @@ const AboutUs = ({ onOpenConsultation }) => {
       <section className="py-14 md:py-20 bg-primary-bg relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Side: Animated Text */}
-            <motion.div 
+            <motion.div
               variants={sectionVariants}
               initial="hidden"
               whileInView="visible"
@@ -248,16 +252,16 @@ const AboutUs = ({ onOpenConsultation }) => {
             </motion.div>
 
             {/* Right Side: Animated Image */}
-            <motion.div 
+            <motion.div
               variants={imageVariants('right')}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-100px" }}
               className="lg:col-span-6 lg:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-primary-dark group cursor-pointer"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80" 
-                alt="Luxury Corporate Infrastructure" 
+              <img
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80"
+                alt="Luxury Corporate Infrastructure"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
               <div className="absolute bottom-6 left-6 z-10">
