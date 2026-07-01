@@ -37,8 +37,10 @@ function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      // Instantly scroll to the top of the page on any redirect
-      window.scrollTo(0, 0);
+      // Instantly scroll to the top of the page on any redirect (except when going to the contact form)
+      if (window.location.hash !== '#contact-form') {
+        window.scrollTo(0, 0);
+      }
 
       if (window.location.hash === '#about') {
         setCurrentPage('about');
@@ -46,7 +48,7 @@ function App() {
         setCurrentPage('projects-all');
       } else if (window.location.hash === '#services') {
         setCurrentPage('services');
-      } else if (window.location.hash === '#contact-us') {
+      } else if (window.location.hash === '#contact-us' || window.location.hash === '#contact-form') {
         setCurrentPage('contact');
       } else {
         setCurrentPage('home');
@@ -70,6 +72,18 @@ function App() {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage, window.location.hash]);
+
+  useEffect(() => {
+    if (currentPage === 'contact' && window.location.hash === '#contact-form') {
+      const timer = setTimeout(() => {
+        const element = document.getElementById('contact-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
       return () => clearTimeout(timer);
     }
   }, [currentPage, window.location.hash]);
@@ -328,7 +342,7 @@ function App() {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/918882928434"
+                  href="https://wa.me/918796558916"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 hover:shadow-md transition-all duration-300"
@@ -391,8 +405,14 @@ function App() {
                 </div>
                 <div className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left gap-2.5">
                   <Phone className="w-4 h-4 text-luxury-highlight shrink-0" />
-                  <a href="tel:+918882928434" className="text-text-charcoal/70 hover:text-luxury-highlight transition-colors">
-                    +91 8882928434
+                  <a href="tel:+918796558916" className="text-text-charcoal/70 hover:text-luxury-highlight transition-colors">
+                    +91 8796558916
+                  </a>
+                </div>
+                <div className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left gap-2.5">
+                  <Phone className="w-4 h-4 text-luxury-highlight shrink-0" />
+                  <a href="tel:01204206818" className="text-text-charcoal/70 hover:text-luxury-highlight transition-colors">
+                    0120- 4206818
                   </a>
                 </div>
                 <div className="flex flex-col items-center md:flex-row md:items-center text-center md:text-left gap-2.5">
@@ -412,7 +432,20 @@ function App() {
               <p className="text-xs text-text-charcoal/60 leading-relaxed font-light font-sans max-w-[240px]">
                 Have questions about our turnkey services or corporate designs? Let's connect.
               </p>
-              <a href="#contact-us" className="w-full">
+              <a 
+                href="#contact-form" 
+                className="w-full"
+                onClick={(e) => {
+                  if (currentPage === 'contact') {
+                    e.preventDefault();
+                    const element = document.getElementById('contact-form');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    window.history.pushState(null, '', '#contact-form');
+                  }
+                }}
+              >
                 <Button variant="primary" className="w-full py-3 text-xs uppercase tracking-widest font-semibold justify-center rounded-none mt-1">
                   Send Enquiry
                 </Button>
@@ -610,7 +643,7 @@ function App() {
 
         {/* Sticky Floating WhatsApp Widget */}
         <a
-          href="https://wa.me/918882928434"
+          href="https://wa.me/918796558916"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 group cursor-pointer"

@@ -34,7 +34,7 @@ const services = [
     tag: "Engineering",
     title: "MEP Works",
     desc: "Comprehensive mechanical, electrical and plumbing solutions designed and executed for safety, efficiency and long-term reliability across all project types.",
-    image: "/major-demolition.jpg"
+    image: "/MEP-real-img.jpg"
   },
   {
     num: "06",
@@ -56,7 +56,7 @@ const services = [
     tag: "Sustainability",
     title: "Boring & Rain Water Harvesting",
     desc: "Bore wells and rainwater harvesting systems engineered for sustainable water management and long-term resource conservation.",
-    image: "/pipeline-civil-works.jpg"
+    image: "/rainharvest.jpeg"
   },
 
   {

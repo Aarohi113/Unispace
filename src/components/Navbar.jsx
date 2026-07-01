@@ -47,7 +47,7 @@ const Navbar = ({ currentPage = 'home', onOpenConsultation }) => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed left-0 right-0 z-50 transition-all duration-500 ${showScrolledState
           ? `top-0 bg-white/90 backdrop-blur-sm border-b border-black/5 shadow-lg ${navPadding}`
-          : `top-8 sm:top-11 bg-black/10 backdrop-blur-sm border-b border-white/10 ${navPadding}`
+          : `top-12 sm:top-14 bg-black/10 backdrop-blur-sm border-b border-white/10 ${navPadding}`
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -79,7 +79,19 @@ const Navbar = ({ currentPage = 'home', onOpenConsultation }) => {
 
           {/* Call to Action Button */}
           <div className="hidden lg:flex items-center">
-            <a href="#contact-us">
+            <a 
+              href="#contact-form"
+              onClick={(e) => {
+                if (currentPage === 'contact') {
+                  e.preventDefault();
+                  const element = document.getElementById('contact-form');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  window.history.pushState(null, '', '#contact-form');
+                }
+              }}
+            >
               <Button variant="nav">
                 Book Site Visit
               </Button>
@@ -147,8 +159,18 @@ const Navbar = ({ currentPage = 'home', onOpenConsultation }) => {
               className="relative z-10 flex flex-col gap-5"
             >
               <a
-                href="#contact-us"
-                onClick={() => setIsMobileMenuOpen(false)}
+                href="#contact-form"
+                onClick={(e) => {
+                  setIsMobileMenuOpen(false);
+                  if (currentPage === 'contact') {
+                    e.preventDefault();
+                    const element = document.getElementById('contact-form');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    window.history.pushState(null, '', '#contact-form');
+                  }
+                }}
                 className="w-full"
               >
                 <Button

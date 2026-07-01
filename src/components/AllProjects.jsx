@@ -23,7 +23,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       description: "High-density modular seating architectures optimizing floor layouts while providing premium comfort."
     },
     {
-      title: "Board Room - Genpact (Phase 2)",
+      title: "Board Room - Genpact ",
       category: "Executive Workspace Design",
       location: "Jaipur, India",
       year: "2025",
@@ -31,7 +31,7 @@ const AllProjects = ({ onOpenConsultation }) => {
       description: "Collaborative workspace lounge zones and executive boardrooms featuring premium custom acoustics."
     },
     {
-      title: "Microsoft Noida / Gurugram",
+      title: "Microsoft Noida ",
       category: "High-Tech Corporate Hub",
       location: "Noida & Gurugram, India",
       year: "2026",
@@ -41,23 +41,23 @@ const AllProjects = ({ onOpenConsultation }) => {
     {
       title: "Incuspaze Project",
       category: "Co-Working Managed Workspace",
-      location: "Noida, India",
+      location: "Gurugram, India",
       year: "2025",
       image: "/incuz-2.jpeg",
       description: "A vibrant managed co-working setup focusing on smart meeting pods, shared collaboration desks, and modern café zones."
     },
     {
-      title: "Tata Project",
+      title: "HCL - Interior Work",
       category: "Premium Corporate Offices",
-      location: "Mumbai, India",
+      location: "Sector-126, Noida, India",
       year: "2025",
-      image: "/tcs.jpeg",
-      description: "High-end luxury corporate corporate offices with custom marble lobby finishes and executive boardrooms."
+      image: "/Hcl-interior.jpeg",
+      description: "High-end luxury corporate  offices interior with custom marble lobby finishes and executive boardrooms."
     },
     {
       title: "IOCL Adani Gas Pvt Ltd., Bulandshehar",
 
-      location: "Baghpat, India",
+      location: "Bulandshahr, India",
       year: "2024",
       image: "/IOCL-CNG.jpg",
       description: "Strategic joint venture administrative facility construction and high-grade functional GAS pipeline."
@@ -65,7 +65,7 @@ const AllProjects = ({ onOpenConsultation }) => {
     {
       title: "Think Gas (Sub Contract basis)",
 
-      location: "Bengaluru, India",
+      location: "Baghpat, India",
       year: "2025",
       image: "/mdpe-think_gas.jpeg",
       description: "Premium laying of MDPE pipeline."
@@ -93,6 +93,14 @@ const AllProjects = ({ onOpenConsultation }) => {
       year: "2026",
       image: "/angelique-international.png",
       description: "Global headquarters fit-out highlighting corporate administration wings, international conference suites, and rich wood paneling."
+    },
+    {
+      title: "HCL - Interior Turnkey",
+      category: "Global Headquarters Fit-Out",
+      location: "Sector-3,Noida, India",
+      year: "2026",
+      image: "/Hcl-interior-2.jpeg",
+      description: "Premium corporate workspace showcasing modular workstations, executive zones, and seamless acoustical environments."
     }
   ];
 
