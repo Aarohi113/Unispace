@@ -71,7 +71,7 @@ const services = [
     tag: "Infrastructure",
     title: "Pre-Fab & Industrial Sheds",
     desc: "Modern pre-fabricated buildings and industrial sheds delivered with fast turnaround without compromising on structural quality.",
-    image: "/rcc-road.jpg"
+    image: "/shed-industry.jpg"
   },
 
   {
