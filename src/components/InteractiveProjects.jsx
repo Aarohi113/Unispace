@@ -152,14 +152,14 @@ const InteractiveProjects = () => {
               onClick={() => window.location.hash = '#projects-all'}
             >
               <img
-                src="/tcs.jpeg"
-                alt="TATA Project"
+                src="/gail-workspace.png"
+                alt="Brookfleid Project"
                 loading="lazy"
                 decoding="async"
               />
               <div className="proj-card-overlay"></div>
               <div className="proj-card-details">
-                <h3 className="font-display font-light tracking-wide text-white mb-2">TATA<br />Project</h3>
+                <h3 className="font-display font-light tracking-wide text-white mb-2">Brookfleid<br />Office</h3>
                 <p className="proj-card-desc font-sans text-xs text-white/80 leading-relaxed">
                   Minimalistic monochromatic theme engineered with luxury executive lounges.
                 </p>
