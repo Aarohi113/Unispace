@@ -18,6 +18,7 @@ import AboutUs from './components/AboutUs';
 import AllProjects from './components/AllProjects';
 import OurServices from './components/OurServices';
 import ContactUs from './components/ContactUs';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +51,8 @@ function App() {
         setCurrentPage('services');
       } else if (window.location.hash === '#contact-us' || window.location.hash === '#contact-form') {
         setCurrentPage('contact');
+      } else if (window.location.hash === '#privacy' || window.location.hash === '#privacy-policy' || window.location.hash === '#terms' || window.location.hash === '#terms-of-use') {
+        setCurrentPage('privacy');
       } else {
         setCurrentPage('home');
       }
@@ -249,6 +252,8 @@ function App() {
           <OurServices onOpenConsultation={() => setIsModalOpen(true)} />
         ) : currentPage === 'contact' ? (
           <ContactUs />
+        ) : currentPage === 'privacy' ? (
+          <PrivacyPolicy onOpenConsultation={() => setIsModalOpen(true)} />
         ) : (
           <>
             {/* Main Full-Screen Hero */}
@@ -390,6 +395,16 @@ function App() {
                 <a href="#projects-all" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Projects</a>
                 <a href="#services" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Services</a>
                 <a href="#contact-us" className="text-text-charcoal/70 hover:text-brand-accent transition-colors">Contact Us</a>
+                <a 
+                  href="#privacy" 
+                  onClick={() => {
+                    setCurrentPage('privacy');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-text-charcoal/70 hover:text-brand-accent transition-colors"
+                >
+                  Privacy Policy
+                </a>
               </div>
             </div>
 
@@ -458,8 +473,26 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-black/5 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-text-charcoal/40 gap-4">
             <span>&copy; 2026 Unispace Contracts. All rights reserved.</span>
             <div className="flex items-center gap-6">
-              <a href="#terms" className="hover:text-brand-accent transition-colors">Terms of Use</a>
-              <a href="#privacy" className="hover:text-brand-accent transition-colors">Privacy Policy</a>
+              <a 
+                href="#terms" 
+                onClick={() => {
+                  setCurrentPage('privacy');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="hover:text-brand-accent transition-colors cursor-pointer"
+              >
+                Terms of Use
+              </a>
+              <a 
+                href="#privacy" 
+                onClick={() => {
+                  setCurrentPage('privacy');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="hover:text-brand-accent transition-colors cursor-pointer"
+              >
+                Privacy Policy
+              </a>
             </div>
           </div>
         </footer>

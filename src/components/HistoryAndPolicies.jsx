@@ -147,6 +147,14 @@ const HistoryAndPolicies = () => {
                       <p className="font-sans text-xs md:text-sm text-white/85 leading-relaxed font-light">
                         {item.desc}
                       </p>
+                      {item.title === "DATA SECURITY AND PRIVACY POLICY" && (
+                        <a
+                          href="#privacy"
+                          className="inline-flex items-center gap-2 text-xs font-semibold text-luxury-highlight hover:underline tracking-wider uppercase pt-1"
+                        >
+                          Read Full Privacy Policy &rarr;
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>
