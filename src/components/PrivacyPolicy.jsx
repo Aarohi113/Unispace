@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ShieldCheck, 
-  Lock, 
-  Eye, 
-  Database, 
-  Share2, 
-  Globe2, 
-  UserCheck, 
-  RefreshCw, 
-  Mail, 
-  FileText, 
-  Building2, 
-  ExternalLink, 
-  ArrowLeft, 
+import {
+  ShieldCheck,
+  Lock,
+  Eye,
+  Database,
+  Share2,
+  Globe2,
+  UserCheck,
+  RefreshCw,
+  Mail,
+  FileText,
+  Building2,
+  ExternalLink,
+  ArrowLeft,
   CheckCircle2,
   Calendar
 } from 'lucide-react';
@@ -265,7 +265,7 @@ const PrivacyPolicy = ({ onOpenConsultation }) => {
 
   return (
     <div className="bg-primary-bg min-h-screen pt-[70px] md:pt-[80px] font-sans text-text-charcoal overflow-x-hidden">
-      
+
       {/* 1. Header Hero Banner */}
       <section className="relative py-16 md:py-24 w-full flex items-center justify-center overflow-hidden bg-primary-dark text-white">
         <div className="absolute inset-0 z-0 opacity-20">
@@ -275,8 +275,8 @@ const PrivacyPolicy = ({ onOpenConsultation }) => {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           {/* Breadcrumb / Back button */}
           <div className="flex items-center justify-center gap-2 mb-6">
-            <a 
-              href="#home" 
+            <a
+              href="#home"
               className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-white/60 hover:text-luxury-highlight transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
@@ -311,7 +311,7 @@ const PrivacyPolicy = ({ onOpenConsultation }) => {
           >
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-luxury-highlight" />
-              Effective Date: September 10, 2026
+              Effective Date: September 10, 2010
             </span>
             <span className="hidden md:inline">•</span>
             <span className="flex items-center gap-1.5">
@@ -329,7 +329,7 @@ const PrivacyPolicy = ({ onOpenConsultation }) => {
 
       {/* 2. Main Content Container */}
       <section className="py-12 md:py-20 max-w-5xl mx-auto px-6 md:px-12">
-        
+
         {/* Intro Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
